@@ -6,11 +6,11 @@ const productTile = (props) => {
   return(
     <div>
       <Paper zDepth=(1)>
-        <span className='productName'>{props.product.name}</span>
-        <span className='productPrice'>${props.product.price}</span>
+        <span className='perkName'>{props.perk.name}</span>
+        <span className='perkDescription'>${props.perk.description}</span>
         <img className='productImage'
-          src={props.product.image}
-          alt={props.product.name}
+          src={props.perk.image}
+          alt={props.perk.name}
         />
       </Paper>
     </div>
