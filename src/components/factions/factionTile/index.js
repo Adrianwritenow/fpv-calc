@@ -9,7 +9,7 @@ const factionTile = (props) => {
         <span className='factionName'>{props.faction.name}</span>
         <img className='faction Image'
           src={props.faction.image}
-          alt={props.character.name}
+          alt={props.faction.name}
         />
       </Paper>
     </div>
