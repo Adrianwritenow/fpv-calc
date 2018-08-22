@@ -2,6 +2,5 @@ export default{
   name:'Gladiator',
   role:'Assassin',
   faction:'Knights',
-  image:
-  detailedImage:
+  image:'images/heroes/knights/gladiator.png'
 }

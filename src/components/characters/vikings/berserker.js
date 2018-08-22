@@ -2,6 +2,6 @@ export default{
   name:'Berserker',
   role:'Assassin',
   faction:'Vikings',
-  image:
-  detailedImage:
+  image:'images/heroes/vikings/berserker.png'
+
 }

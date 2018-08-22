@@ -2,6 +2,6 @@ export default{
   name:'SHaman',
   role:'Assassin',
   faction:'Vikings',
-  image:
-  detailedImage:
+  image:'images/heroes/vikings/shaman.png'
+
 }

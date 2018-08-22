@@ -2,6 +2,6 @@ export default{
   name:'Highlander',
   role:'Hybrid',
   faction:'Vikings',
-  image:
-  detailedImage:
+  image:'images/heroes/vikings/highlander.png'
+
 }

@@ -2,6 +2,5 @@ export default{
   name:'Peacekeeper',
   role:'Assassin',
   faction:'Knights',
-  image:
-  detailedImage:
+  image:'images/heroes/knights/peacekeeper.png'
 }

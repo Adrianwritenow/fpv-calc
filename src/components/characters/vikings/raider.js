@@ -2,6 +2,6 @@ export default{
   name:'Raider',
   role:'Vanguard',
   faction:'Vikings',
-  image:
-  detailedImage:
+  image:'images/heroes/vikings/raider.png'
+
 }

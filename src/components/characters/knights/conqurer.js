@@ -2,6 +2,5 @@ export default{
   name:'Conqurer',
   role:'Heavy',
   faction:'Knights',
-  image:
-  detailedImage:
+  image:'images/heroes/knights/conqurer.png'
 }

@@ -2,6 +2,6 @@ export default{
   name:'Aramusha',
   role:'Hybrid',
   faction:'Samurai',
-  image:
-  detailedImage:
+  image:'images/heroes/samurai/aramusha.png'
+
 }

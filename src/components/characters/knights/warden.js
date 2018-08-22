@@ -2,6 +2,5 @@ export default{
   name:'Warden',
   role:'Vanguard',
   faction:'Knights',
-  image:
-  detailedImage:
+  image:'images/heroes/knights/warden.png'
 }

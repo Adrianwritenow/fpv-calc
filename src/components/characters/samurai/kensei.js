@@ -2,6 +2,6 @@ export default{
   name:'Kensei',
   role:'Vanguard',
   faction:'Samurai',
-  image:
-  detailedImage:
+  image:'images/heroes/samurai/kensei.png'
+
 }

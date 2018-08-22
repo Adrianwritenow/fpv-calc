@@ -2,6 +2,6 @@ export default{
   name:'Warlord',
   role:'Heavy',
   faction:'Vikings',
-  image:
-  detailedImage:
+  image:'images/heroes/vikings/warlord.png'
+
 }

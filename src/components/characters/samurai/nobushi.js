@@ -2,6 +2,6 @@ export default{
   name:'Nopbushi',
   role:'Hybrid',
   faction:'Samurai',
-  image:
-  detailedImage:
+  image:'images/heroes/samurai/nobushi.png'
+
 }
