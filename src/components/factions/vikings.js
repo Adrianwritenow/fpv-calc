@@ -1,5 +1,4 @@
 export default{
   name:'Vikings',
-  image:
-  detailedImage:
+  image:'images/vikingLogo.png'
 }

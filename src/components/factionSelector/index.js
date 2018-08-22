@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-
-
-
-var fhLogo= './images/forHonorLogo.png';
-
+import FactionTile from '../factions/factionTile';
+import factions from '../factions';
 
 class factionSelector extends Component {
 
@@ -14,13 +11,16 @@ class factionSelector extends Component {
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:");
+    console.log("i am a factions", factions);
   }
 
   render() {
     return (
       <div>
-        <p>SPLASH</p>
-        <img src={fhLogo} className="App-logo" alt="logo" />
+      <FactionTile faction={factions.knights}/>
+      <FactionTile faction={factions.samurai}/>
+      <FactionTile faction={factions.vikings}/>
+
 
       </div>
 

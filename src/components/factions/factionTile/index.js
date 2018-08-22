@@ -1,17 +1,15 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
-import './index.css'
 
-const factionTile = (props) => {
+const FactionTile = (props) => {
   return(
     <div>
-      <Paper zDepth=(1)>
         <span className='factionName'>{props.faction.name}</span>
         <img className='faction Image'
           src={props.faction.image}
           alt={props.faction.name}
         />
-      </Paper>
     </div>
   )
 }
+
+export default FactionTile;

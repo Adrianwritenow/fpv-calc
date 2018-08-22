@@ -1,5 +1,4 @@
 export default{
   name:'Knights',
-  image:
-  detailedImage:
+  image:'images/knightsLogo2.png'
 }

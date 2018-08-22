@@ -19,8 +19,9 @@ class factionSelector extends Component {
   render() {
     return (
       <div>
-        <header></header>
-        <footer></footer>
+        <header>Hero Builder</header>
+          {this.props.children}
+        <footer>created by Adrianwritenow</footer>
       </div>
 
     );

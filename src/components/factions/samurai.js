@@ -1,5 +1,4 @@
 export default{
   name:'Samurai',
-  image:
-  detailedImage:
+  image:'images/samuraiLogo.png'
 }
