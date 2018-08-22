@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import factionSelector from './components/factionSelector';
 
-import logo from './logo.svg';
+
+import Button from '@material-ui/core/Button';
 import './App.css';
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <Button variant="raised" color="primary">
-          TEST
-        </Button>
-          <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+         <Route render={({location})=> console.log(location)|| (
+           <TransitionGroup>
+             <CSSTransition key={location.key} classNames='fade'timeout={400}>
+               <Switch location={location}>
+                <Route exact path="/" component={factionSelector}/>
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+          )}/>
+      </BrowserRouter>
+
+
     );
   }
 }
