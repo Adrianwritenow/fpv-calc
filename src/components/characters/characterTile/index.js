@@ -1,7 +1,7 @@
 import React from 'react';
-import './index.css'
 
 const CharacterTile = (props) => {
+
   return(
     <div>
         <span className='characterName'>{props.character.name}</span>

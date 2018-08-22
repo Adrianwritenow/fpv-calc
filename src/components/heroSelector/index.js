@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import keyIndex from 'react-key-index';
+
 import heroes from '../characters';
+import CharacterTile from '../characters/characterTile';
 
 class HeroSelector extends Component {
 
@@ -10,25 +13,29 @@ class HeroSelector extends Component {
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:faction Heroes");
-
     const {faction} = this.props.match.params
+    var array = Object.values(heroes);
 
-    var heroesArray = Object.values(heroes);
-    console.log('im the',heroesArray);
-    console.log(faction);
-  }
+    var heroesArray = keyIndex(array, 1);
+    console.log(heroesArray);
 
-
-
+    heroesArray.map((hero)=>{
+      if (hero.faction.toUpperCase() == faction.toUpperCase()) {
+        return console.log(hero.name);
+      }else{
+        return;
+      }
+    });
+}
   render() {
     return (
       <div>
+
       <p>faction heroes 1-6</p>
-
-
       </div>
 
     );
+
   }
 }
 

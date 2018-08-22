@@ -35,5 +35,6 @@ export default{
   highlander,
   raider,
   valkyrie,
-  warlord
+  warlord,
+  shaman
 }
