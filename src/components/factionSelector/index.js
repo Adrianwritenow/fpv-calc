@@ -10,7 +10,7 @@ class factionSelector extends Component {
   }
 
   componentDidMount(){
-    console.log("COMPONENT MOUNTED:");
+    console.log("COMPONENT MOUNTED:factionSelector");
     console.log("i am a factions", factions);
   }
 

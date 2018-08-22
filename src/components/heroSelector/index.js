@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import 
+import heroes from '../characters';
 
-class FactionHeroes extends Component {
+class HeroSelector extends Component {
 
   constructor(props) {
     super(props);
@@ -10,8 +10,15 @@ class FactionHeroes extends Component {
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:faction Heroes");
+
     const {faction} = this.props.match.params
+
+    var heroesArray = Object.values(heroes);
+    console.log('im the',heroesArray);
+    console.log(faction);
   }
+
+
 
   render() {
     return (
@@ -25,4 +32,4 @@ class FactionHeroes extends Component {
   }
 }
 
-export default FactionHeroes;
+export default HeroSelector;

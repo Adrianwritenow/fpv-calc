@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import factionSelector from './components/factionSelector';
-import FactionHeroes from './components/factionHeroes';
+import HeroSelector from './components/heroSelector';
 
 import BaseLayout from './components/baseLayout'
 
@@ -22,7 +22,7 @@ class App extends Component {
              <CSSTransition key={location.key} classNames='fade'timeout={400}>
                <Switch location={location}>
                 <Route exact path="/" component={factionSelector}/>
-                <Route exact path='/:faction' component={FactionHeroes}/>
+                <Route path='/:faction' component={HeroSelector}/>
               </Switch>
             </CSSTransition>
           </TransitionGroup>
