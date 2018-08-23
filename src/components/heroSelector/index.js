@@ -11,11 +11,22 @@ class HeroSelector extends Component {
 
   }
 
+  componentWillMount(){
+    let factionOption = ['KNIGHTS','VIKINGS','SAMURAI'];
+    const {faction} = this.props.match.params;
+
+    console.log(factionOption.includes(faction.toUpperCase()));
+
+
+
+
+
+  }
+
   componentDidMount(){
     console.log("COMPONENT MOUNTED:faction Heroes");
     const {faction} = this.props.match.params
     var array = Object.values(heroes);
-
     var heroesArray = keyIndex(array, 1);
     console.log(heroesArray);
 
@@ -26,6 +37,8 @@ class HeroSelector extends Component {
         return;
       }
     });
+
+
 }
   render() {
     return (
