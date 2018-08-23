@@ -17,36 +17,31 @@ class HeroSelector extends Component {
 
     console.log(factionOption.includes(faction.toUpperCase()));
 
-
-
-
-
   }
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:faction Heroes");
+}
+
+  render() {
+    var heroCardArray=[];
+
     const {faction} = this.props.match.params
     var array = Object.values(heroes);
     var heroesArray = keyIndex(array, 1);
     console.log(heroesArray);
 
-    heroesArray.map((hero)=>{
+    heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() == faction.toUpperCase()) {
-        return console.log(hero.name);
-      }else{
-        return;
+        heroCardArray.push(<span className='heroCard' key={i}><img src={hero.image}/></span>)
+        return heroCardArray;
       }
     });
-
-
-}
-  render() {
     return (
       <div>
-
+        {heroCardArray}
       <p>faction heroes 1-6</p>
       </div>
-
     );
 
   }
