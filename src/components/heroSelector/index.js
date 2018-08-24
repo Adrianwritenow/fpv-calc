@@ -3,6 +3,7 @@ import keyIndex from 'react-key-index';
 
 import heroes from '../characters';
 import CharacterTile from '../characters/characterTile';
+import '../../styles.css';
 
 class HeroSelector extends Component {
 
@@ -33,7 +34,12 @@ class HeroSelector extends Component {
 
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() == faction.toUpperCase()) {
-        heroCardArray.push(<span className='heroCard' key={i}><img src={hero.image}/></span>)
+        heroCardArray.push(
+        <span className='heroCard' key={i}>
+          <img src={hero.image}/>
+          <p>{hero.name}</p>
+          <p>{hero.role}</p>
+        </span>)
         return heroCardArray;
       }
     });
