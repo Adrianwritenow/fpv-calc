@@ -6,7 +6,6 @@ class factionSelector extends Component {
 
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount(){
@@ -20,8 +19,6 @@ class factionSelector extends Component {
       <FactionTile faction={factions.knights}/>
       <FactionTile faction={factions.samurai}/>
       <FactionTile faction={factions.vikings}/>
-
-
       </div>
 
     );
