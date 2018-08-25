@@ -34,6 +34,7 @@ class HeroSelector extends Component {
 
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() == faction.toUpperCase()) {
+        console.log(hero);
         heroCardArray.push(
         <span className='heroCard' key={i}>
           <img src={hero.image}/>
