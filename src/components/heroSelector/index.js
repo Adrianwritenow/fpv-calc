@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import keyIndex from 'react-key-index';
-
-import heroes from '../characters';
 import CharacterTile from '../characters/characterTile';
+import heroes from '../characters';
 import '../../styles.css';
 
 class HeroSelector extends Component {
@@ -13,10 +12,6 @@ class HeroSelector extends Component {
   }
 
   componentWillMount(){
-    let factionOption = ['KNIGHTS','VIKINGS','SAMURAI'];
-    const {faction} = this.props.match.params;
-
-    console.log(factionOption.includes(faction.toUpperCase()));
 
   }
 
@@ -34,13 +29,10 @@ class HeroSelector extends Component {
 
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() == faction.toUpperCase()) {
-        console.log(hero);
         heroCardArray.push(
-        <span className='heroCard' key={i}>
-          <img src={hero.image}/>
-          <p>{hero.name}</p>
-          <p>{hero.role}</p>
-        </span>)
+          <CharacterTile character={hero}/>
+        )
+
         return heroCardArray;
       }
     });
