@@ -11,7 +11,6 @@ class HeroOverView extends Component {
 
   componentWillMount(){
 
-
   }
 
   componentDidMount(){
@@ -29,7 +28,7 @@ class HeroOverView extends Component {
          selectedHero.push(
             <div className='selectedInfo' key={i}>
               <p>Name:{character.name}</p>
-              <img src={character.image}/>
+              <img src={`../${character.image}`}/>
               <p>Class:{character.role}</p>
             </div>
           );

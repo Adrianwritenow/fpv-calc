@@ -30,7 +30,7 @@ class HeroSelector extends Component {
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() == faction.toUpperCase()) {
         heroCardArray.push(
-          <CharacterTile character={hero}/>
+          <CharacterTile character={hero} key={i}/>
         )
 
         return heroCardArray;
