@@ -28,7 +28,13 @@ class HeroOverView extends Component {
 
   render() {
     var selectedHero =[];
-    var featArray=[];
+    var featArray1=[];
+    var featArray2=[];
+    var featArray3=[];
+    var featArray4=[];
+
+
+
     var heroesArray = Object.values(heroes);
     const {hero} = this.props.match.params;
 
@@ -42,13 +48,31 @@ class HeroOverView extends Component {
             </div>
           );
 
-          character.feats.level1.map((feat,i)=>{
-            featArray.push(
-                <TableCell>{feat.name}</TableCell>
-            );
+          character.feats.map((feat,i)=>{
+            if (feat.level == 1) {
+              featArray1.push(
+                  <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
+              );
+            }else if (feat.level == 2) {
+              featArray2.push(
+                  <TableCell key={i}>{feat.name}</TableCell>
+              );
+            }else if (feat.level == 3) {
+                featArray3.push(
+                    <TableCell key={i}>{feat.name}</TableCell>
+                );
+              }else {
+                featArray4.push(
+                    <TableCell key={i}>{feat.name}</TableCell>
+                );
+              }
+
+
+
+
 
           })
-        return selectedHero, featArray;
+        return selectedHero,featArray1,featArray2,featArray3,featArray4;
       }
     });
 
@@ -56,14 +80,32 @@ class HeroOverView extends Component {
       <Paper className='heroOverviewContainer'>
         {selectedHero}
         <Table className='heroOverviewTable'>
-        <TableHead>
-          <TableRow>
-            <TableCell><h1>Feats</h1></TableCell>
-          </TableRow>
-        </TableHead>
+          <TableHead>
+            <TableRow>
+              <TableCell><h1>Feats</h1></TableCell>
+            </TableRow>
+          </TableHead>
         <TableBody>
+        <TableRow>
         <TableCell component="th" scope="row">LEVEL 1</TableCell>
-        {featArray}
+          {featArray1}
+        </TableRow>
+        <TableRow>
+        <TableCell component="th" scope="row">LEVEL 2</TableCell>
+          {featArray2}
+        </TableRow>
+        <TableRow>
+        <TableCell component="th" scope="row">LEVEL 3</TableCell>
+        {featArray3}
+        </TableRow>
+        <TableRow>
+        <TableCell component="th" scope="row">LEVEL 4</TableCell>
+        {featArray4}
+        </TableRow>
+
+
+
+
 
         </TableBody>
         </Table>
