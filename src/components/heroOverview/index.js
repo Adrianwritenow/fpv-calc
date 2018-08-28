@@ -55,15 +55,15 @@ class HeroOverView extends Component {
               );
             }else if (feat.level == 2) {
               featArray2.push(
-                  <TableCell key={i}>{feat.name}</TableCell>
+                <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
               );
             }else if (feat.level == 3) {
                 featArray3.push(
-                    <TableCell key={i}>{feat.name}</TableCell>
+                  <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
                 );
               }else {
                 featArray4.push(
-                    <TableCell key={i}>{feat.name}</TableCell>
+                  <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
                 );
               }
 
