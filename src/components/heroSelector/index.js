@@ -3,6 +3,8 @@ import keyIndex from 'react-key-index';
 import CharacterTile from '../characters/characterTile';
 import heroes from '../characters';
 import '../../styles.css';
+import feats from '../feats';
+
 
 class HeroSelector extends Component {
 
@@ -17,6 +19,8 @@ class HeroSelector extends Component {
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:faction Heroes");
+    console.log('heroesCheck', heroes.centurion);
+    console.log('featsCheck', feats.level1.ironLungs);
 }
 
   render() {

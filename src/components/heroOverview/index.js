@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import heroes from '../characters';
 import '../../styles.css';
 
+
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
