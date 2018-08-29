@@ -1,0 +1,17 @@
+export default {
+catapult:{name:'Catapult',level:4,info:'Call a catapult strike over an area.',image:'images/feats/level4/catapult.png'},
+stalwartBanner:{name:'Stalwart Banner',level:4,info:'Nearby allies continuously regain health.', image:'images/feats/level4/stalwartBanner.png'},
+phalanx:{name:'Phalanx',level:4,info:'Grand a shield to all alive teammates (yourself included)',image:'images/feats/level4/phalanx.png'},
+moraleBooster:{name:'Morale Booster',level:4,info:'Improve the attacks of nearby allies for a short duration.',image:'images/feats/level4/moraleBooster.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:4,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level4/ironLungs.png'},
+}

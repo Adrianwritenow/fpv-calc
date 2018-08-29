@@ -1,19 +1,17 @@
 export default {
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-bodyCount:{name:'Body Count',level:1,info:'Passive | Killing soldier grants you health and stamina.', image:'images/feats/level1/bodyCount.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'}
-
-
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+bodyCount:{name:'Body Count',level:1,info:'Passive | Killing soldier grants you health and stamina.', image:'images/feats/level1/bodyCount.png'},
+rush:{name:'Rush',level:1,info:'Trigger to gain movement speed for a short duration',image:'images/feats/level1/rush.png'},
+conqueror:{name:'Conqueror',level:1,info:'Passive | Capture and upgrade control zones faster.',image:'images/feats/level1/conqueror.png'},
+comeAtMe:{name:'Come At Me',level:1,info:'Gain more Renown from kills, but take more Damage from Attacks.',image:'images/feats/level1/comeAtMe.png'},
+harshJudgement:{name:'Harsh Judgement',level:1,info:'Reduce target\'s stamina for a short moment',image:'images/feats/level1/harshJudgement.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
 }

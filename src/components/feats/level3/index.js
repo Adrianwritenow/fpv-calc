@@ -1,0 +1,17 @@
+export default {
+secondWind:{name:'Second Wind',level:3,info:'Recover some of your health.',image:'images/feats/level3/secondWind.png'},
+pugio:{name:'Pugio',level:3,info:'A projectile that deals low damage and traps an enemy for a short time.', image:'images/feats/level3/pugio.png'},
+sharpenBlade:{name:'Sharpen Blade',level:3,info:'Attacks inflict low Damage over time.',image:'images/feats/level3/sharpenBlade.png'},
+pugnoMortis:{name:'Pugno Mortis',level:3,info:'Throw an explosive projectile dealing damage over an area.',image:'images/feats/level3/pugnoMortis.png'},
+takedown:{name:'Takedown',level:3,info:'Throws make enemies fall to the ground.',image:'images/feats/level3/takedown.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+}

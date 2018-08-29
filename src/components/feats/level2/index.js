@@ -1,0 +1,17 @@
+export default {
+inspire:{name:'Inspire',level:2,info:'Allies and yourself deal more damage, soldiers fight faster',image:'images/feats/level2/inspire.png'},
+haymaker:{name:'Haymaker',level:2,info:'Passive | Punshes, kicks, and throws now deal damage', image:'images/feats/level2/haymaker.png'},
+centurionsMarch:{name:'Centurion\'s',level:2,info:'Gain unlimited stamina for a short time',image:'images/feats/level2/centurionsMarch.png'},
+inspire:{name:'Inspire',level:2,info:'Nearby allies deal more Damage, and soldiers fight faster.',image:'images/feats/level2/inspire.png'},
+fiatLux:{name:'Fiat Lux',level:2,info:'Throw a flash grenade that blinds enemies for a few seconds.',image:'images/feats/level2/fiatLux.png'},
+thickBlood:{name:'Thick Blood',level:2,info:'Passive | Gain immunity from regular bleed damage.',image:'images/feats/level2/thickBlood.png'},
+righteousDeflection:{name:'Righteous Defelction',level:2,info:'Passive | Parry to gain high damage reduction for a short time',image:'images/feats/level2/righteousDeflection.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+ironLungs:{name:'Iron Lungs',level:2,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level2/ironLungs.png'},
+}
