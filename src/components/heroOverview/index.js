@@ -7,10 +7,15 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import TableCell from '@material-ui/core/TableCell';
+
+import FeatTableCell from '../feats/featTableCell';
+
+
+
 
 class HeroOverView extends Component {
 
@@ -61,21 +66,13 @@ handleHover(feat){
 
           character.feats.map((feat,i)=>{
             if (feat.level == 1) {
-              featArray1.push(
-                  <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)} key={i}><img src ={`../${feat.image}`}/></TableCell>
-              );
+              featArray1.push(<FeatTableCell key={i} featProp={feat}/>);
             }else if (feat.level == 2) {
-              featArray2.push(
-                <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)}  key={i}><img src ={`../${feat.image}`}/></TableCell>
-              );
+              featArray2.push(<FeatTableCell key={i} featProp={feat}/>);
             }else if (feat.level == 3) {
-                featArray3.push(
-                  <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)}  key={i}><img src ={`../${feat.image}`}/></TableCell>
-                );
+                featArray3.push(<FeatTableCell key={i} featProp={feat}/>);
               }else {
-                featArray4.push(
-                  <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)}  key={i}><img src ={`../${feat.image}`}/></TableCell>
-                );
+                featArray4.push(<FeatTableCell key={i} featProp={feat}/>);
               }
 
           })
@@ -93,7 +90,7 @@ handleHover(feat){
             </TableRow>
           </TableHead>
         <TableBody>
-        <TableRow>
+        <TableRow className='lv1Feats'>
         <TableCell component="th" scope="row">LEVEL 1</TableCell>
           {featArray1}
         </TableRow>
@@ -109,11 +106,6 @@ handleHover(feat){
         <TableCell component="th" scope="row">LEVEL 4</TableCell>
         {featArray4}
         </TableRow>
-
-
-
-
-
         </TableBody>
         </Table>
       </Paper>
