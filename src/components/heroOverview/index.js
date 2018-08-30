@@ -66,13 +66,13 @@ handleHover(feat){
 
           character.feats.map((feat,i)=>{
             if (feat.level == 1) {
-              featArray1.push(<FeatTableCell key={i} featProp={feat}/>);
+              featArray1.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level == 2) {
-              featArray2.push(<FeatTableCell key={i} featProp={feat}/>);
+              featArray2.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level == 3) {
-                featArray3.push(<FeatTableCell key={i} featProp={feat}/>);
+                featArray3.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
               }else {
-                featArray4.push(<FeatTableCell key={i} featProp={feat}/>);
+                featArray4.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
               }
 
           })
@@ -86,24 +86,24 @@ handleHover(feat){
         <Table className='heroOverviewTable'>
           <TableHead>
             <TableRow>
-              <TableCell><h1>Feats</h1></TableCell>
+            <TableCell><h1>Feats</h1></TableCell>
             </TableRow>
           </TableHead>
         <TableBody>
-        <TableRow className='lv1Feats'>
-        <TableCell component="th" scope="row">LEVEL 1</TableCell>
+        <TableRow className='featsRow'>
+        <TableCell  scope="row">LEVEL 1</TableCell>
           {featArray1}
         </TableRow>
-        <TableRow>
-        <TableCell component="th" scope="row">LEVEL 2</TableCell>
+        <TableRow className='featsRow'>
+        <TableCell  scope="row">LEVEL 2</TableCell>
           {featArray2}
         </TableRow>
-        <TableRow>
-        <TableCell component="th" scope="row">LEVEL 3</TableCell>
+        <TableRow className='featsRow'>
+        <TableCell  scope="row">LEVEL 3</TableCell>
         {featArray3}
         </TableRow>
-        <TableRow>
-        <TableCell component="th" scope="row">LEVEL 4</TableCell>
+        <TableRow className='featsRow'>
+        <TableCell>LEVEL 4</TableCell>
         {featArray4}
         </TableRow>
         </TableBody>

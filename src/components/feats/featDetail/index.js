@@ -4,9 +4,9 @@ const FeatDetail = (props) => {
 
   return(
     <div className='featInfoCard'>
-        <span className='featName'>Name:{props.featInfo.name}</span>
-        <span className='featLevel'>Feat lv:{props.featInfo.level}</span>
-        <span className='featDetail'>Description:{props.featInfo.info}</span>
+        <p className='featName'><span>Name:</span>{props.featInfo.name}</p>
+        <p className='featLevel'><span>Feat lv:</span>{props.featInfo.level}</p>
+        <p className='featDetail'><span>Description:</span>{props.featInfo.info}</p>
     </div>
   )
 }

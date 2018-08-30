@@ -1,3 +1,21 @@
 .selectedInfo img{
   max-width: 200px;
 }
+
+.featsRow{
+  width: fit-content;
+  display: flex!important;
+  height: auto !important;
+}
+
+.featInfoCard{
+  background-color: black;
+  width: 200px;
+
+  p{
+    color: silver;
+    span{
+      color: gold;
+    }
+  }
+}
