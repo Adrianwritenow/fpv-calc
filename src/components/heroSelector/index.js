@@ -19,8 +19,7 @@ class HeroSelector extends Component {
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:faction Heroes");
-    console.log('heroesCheck', heroes.centurion);
-    console.log('featsCheck', feats.level1.ironLungs);
+
 }
 
   render() {

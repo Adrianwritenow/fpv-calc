@@ -1,10 +1,12 @@
+import feats from '../../feats';
+
 export default{
   name:'Gladiator',
   role:'Assassin',
   faction:'Knights',
   image:'images/heroes/knights/gladiator.png',
-  feats:{level1:[{name:'stuff',info:'things',image:'hello'}],
-        level2:[{name:'stuff',info:'things',image:'hello'}],
-        level3:[{name:'stuff',info:'things',image:'hello'}],
-        level4:[{name:'stuff',info:'things',image:'hello'}]}
+  feats:[feats.level1.ironLungs,feats.level1.bountyHunter,feats.level1.deadly,
+          feats.level2.righteousDeflection,feats.level2.haymaker,feats.level2.revengeAttack,
+          feats.level3.pugnoMortis,feats.level3.neptunesWrath,feats.level3.boleadoras,
+          feats.level4.fearItself,feats.level4.catapult,feats.level4.roarOfTheCrowd]
 }

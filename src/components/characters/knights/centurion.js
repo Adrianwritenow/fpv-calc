@@ -1,10 +1,12 @@
+import feats from '../../feats';
+
 export default{
   name:'Centurion',
   faction:'Knights',
   role:'Hybrid',
   image:'images/heroes/knights/centurion.png',
-  feats:{level1:[{name:'Rush', level:1, info:'Trigger to gain movement speed for a short duration.',image:'images/feats/level1/ironLungs.png'}],
-        level2:[{name:'stuff',info:'things',image:'hello'}],
-        level3:[{name:'stuff',info:'things',image:'hello'}],
-        level4:[{name:'stuff',info:'things',image:'hello'}]}
+  feats:[feats.level1.ironLungs,feats.level1.bountyHunter,feats.level1.rush,
+          feats.level2.inspire,feats.level2.haymaker,feats.level2.centurionsMarch,
+          feats.level3.secondWind,feats.level3.pugio,feats.level3.sharpenBlade,
+          feats.level4.catapult,feats.level4.stalwartBanner,feats.level4.phalanx]
 }
