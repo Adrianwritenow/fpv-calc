@@ -17,7 +17,11 @@ class HeroOverView extends Component {
   constructor(props) {
     super(props);
 
+    this.handleHover = this.handleHover.bind(this);
+
   }
+
+
 
   componentWillMount(){
 
@@ -27,12 +31,18 @@ class HeroOverView extends Component {
     console.log("COMPONENT MOUNTED:heroOverview");
 }
 
+handleHover(feat){
+  console.log('feat detail:',feat.name);
+}
+
   render() {
     var selectedHero =[];
     var featArray1=[];
     var featArray2=[];
     var featArray3=[];
     var featArray4=[];
+
+
 
 
 
@@ -52,25 +62,21 @@ class HeroOverView extends Component {
           character.feats.map((feat,i)=>{
             if (feat.level == 1) {
               featArray1.push(
-                  <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
+                  <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)} key={i}><img src ={`../${feat.image}`}/></TableCell>
               );
             }else if (feat.level == 2) {
               featArray2.push(
-                <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
+                <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)}  key={i}><img src ={`../${feat.image}`}/></TableCell>
               );
             }else if (feat.level == 3) {
                 featArray3.push(
-                  <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
+                  <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)}  key={i}><img src ={`../${feat.image}`}/></TableCell>
                 );
               }else {
                 featArray4.push(
-                  <TableCell key={i}><img src ={`../${feat.image}`}/></TableCell>
+                  <TableCell onMouseEnter={(e)=>this.handleHover(feat,e)}  key={i}><img src ={`../${feat.image}`}/></TableCell>
                 );
               }
-
-
-
-
 
           })
         return selectedHero,featArray1,featArray2,featArray3,featArray4;
