@@ -14,4 +14,11 @@
     .featInfoCard p span {
       color: gold; }
 
+.characterImage {
+  max-height: 300px; }
+
+.heroOverviewContainer {
+  display: flex;
+  width: auto; }
+
 /*# sourceMappingURL=styles.css.map */

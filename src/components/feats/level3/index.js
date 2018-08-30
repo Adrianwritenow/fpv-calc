@@ -9,7 +9,7 @@ neptunesWarth:{name:'Neptune\'s Wrath',level:3,info:'Throw a trident for moderat
 boleadoras:{name:'Boleadoras',level:3,info:'Projectile that deals low damage and traps an enemy for a short time',image:'images/feats/level3/boleadoras.png'},
 punchThrough:{name:'Punch Through',level:3,info:'Passive | Deal damage on blocked attacks. (Kind of a useless passive according to testing)',image:'images/feats/level3/punchThrough.png'},
 healOnBlock:{name:'Heal on Block',level:3,info:'Passive | Blocking regenerates your health.',image:'images/feats/level3/healOnBlock.png'},
-crossBow:{name:'Crossbow',level:3,info:'Fire a crossbow bolt for medium Damage.',image:'images/feats/level3/ironLungs.png'},
+crossBow:{name:'Crossbow',level:3,info:'Fire a crossbow bolt for medium Damage.',image:'images/feats/level3/crossBow.png'},
 longBow:{name:'Long Bow',level:3,info:'Fire a long bow for moderate damage. (85 dmg)',image:'images/feats/level3/longBow.png'},
 slipThrough:{name:'Slip Through',level:3,info:'Passive | Dodging raises Attack for a short duration',image:'images/feats/level3/slipThrough.png'},
 steadFast:{name:'Steadfast',level:3,info:'Gain immunity from throw attempts for a short duration.',image:'images/feats/level3/steadFast.png'},
