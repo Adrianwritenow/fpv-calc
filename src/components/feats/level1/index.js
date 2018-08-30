@@ -11,7 +11,7 @@ speedRevive:{name:'Speed Revive',level:1,info:'Passive | Rapidly revive fallen t
 stealth:{name:'Stealth',level:1,info:'Passive | Hide yourself from the HUD, Radar & Aim Assist',image:'images/feats/level1/stealth.png'},
 kiai:{name:'Kiai',level:1,info:'Stun nearby opponents with a scream',image:'images/feats/level1/kiai.png'},
 fastRecovery:{name:'Fast Recovery',level:1,info:'Passive | Stamina regenerates faster.',image:'images/feats/level1/fastRecovery.png'},
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
-ironLungs:{name:'Iron Lungs',level:1,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level1/ironLungs.png'},
+throwFarther:{name:'Throw Farther',level:1,info:'Passive | Throw enemies farther',image:'images/feats/level1/throwFarther.png'},
+tireless:{name:'Tireless',level:1,info:'Passive | Lose stamina at a lower rate.',image:'images/feats/level1/tireless.png'},
+stunTrap:{name:'Stun Trap',level:1,info:'Trap that stuns enemies.',image:'images/feats/level1/stunTrap.png'},
 }

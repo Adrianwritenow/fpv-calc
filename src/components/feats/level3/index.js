@@ -13,5 +13,12 @@ crossBow:{name:'Crossbow',level:3,info:'Fire a crossbow bolt for medium Damage.'
 longBow:{name:'Long Bow',level:3,info:'Fire a long bow for moderate damage. (85 dmg)',image:'images/feats/level3/longBow.png'},
 slipThrough:{name:'Slip Through',level:3,info:'Passive | Dodging raises Attack for a short duration',image:'images/feats/level3/slipThrough.png'},
 steadFast:{name:'Steadfast',level:3,info:'Gain immunity from throw attempts for a short duration.',image:'images/feats/level3/steadFast.png'},
-ironLungs:{name:'Iron Lungs',level:3,info:'Passive | You can still Sprint when Out of Stamina',image:'images/feats/level3/ironLungs.png'},
+hardToKill:{name:'Hard to Kill',level:3,info:'Passive | Losing Health increases your Damage reduction',image:'images/feats/level3/hardToKill.png'},
+nukekubi:{name:'Nukekubi',level:3,info:'Gain Stamina on successful attacks',image:'images/feats/level3/nukekubi.png'},
+fury:{name:'Fury',level:3,info:'Raise sprint speed slightly and attack and defense greatly.',image:'images/feats/level3/fury.png'},
+battleCry:{name:'Battle Cry',level:3,info:'Increase ally Damage and makes enemy soldiers flee.',image:'images/feats/level3/battleCry.png'},
+toughAsNails:{name:'Tough as Nails',level:3,info:'Passive | Raises max Health when unlocked.',image:'images/feats/level3/toughAsNails.png'},
+battleCry:{name:'Battle Cry',level:3,info:'Increase ally Damage and makes enemy soldiers flee.',image:'images/feats/level3/battleCry.png'},
+throwingAxe:{name:'ThrowingAxe',level:3,info:'Throw an axe that deals medium damage.',image:'images/feats/level3/throwingAxe.png'},
+javelin:{name:'Javelin',level:3,info:'Throw a javelin for moderate damage.',image:'images/feats/level3/javelin.png'},
 }
