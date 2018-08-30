@@ -1,11 +1,13 @@
+import feats from '../../feats';
+
 export default{
   name:'Berserker',
   role:'Assassin',
   faction:'Vikings',
   image:'images/heroes/vikings/berserker.png',
-  feats:{level1:[{name:'stuff',info:'things',image:'hello'}],
-        level2:[{name:'stuff',info:'things',image:'hello'}],
-        level3:[{name:'stuff',info:'things',image:'hello'}],
-        level4:[{name:'stuff',info:'things',image:'hello'}]}
+  feats:[feats.level1.stunTrap,feats.level1.bountyHunter,feats.level1.rush,
+          feats.level2.doomBanner,feats.level2.bearTrap,feats.level2.revengeAttack,
+          feats.level3.sharpenBlade,feats.level3.fury,feats.level3.throwingAxe,
+          feats.level4.fearItself,feats.level4.berserker,feats.level4.fireFlask]
 
 }

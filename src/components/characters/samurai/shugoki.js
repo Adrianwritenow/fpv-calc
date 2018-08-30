@@ -1,4 +1,5 @@
 import feats from '../../feats';
+
 export default{
   name:'Shugoki',
   role:'Heavy',
