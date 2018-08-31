@@ -108,7 +108,27 @@ handleHover(feat){
         </TableRow>
         </TableBody>
         </Table>
+
+        <Table className='heroOverviewTable'>
+          <TableHead>
+            <TableRow>
+            <TableCell><h1>Weak Against</h1></TableCell>
+            <TableCell><h1>Strong Against</h1></TableCell>
+
+            </TableRow>
+          </TableHead>
+        <TableBody>
+        <TableRow className='featsRow'>
+        </TableRow>
+        </TableBody>
+        </Table>
+
+
+
+
+
       </Paper>
+
     );
   }
 }
