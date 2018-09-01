@@ -80,7 +80,9 @@ handleHover(feat){
 
           })
       }else{
-        heroAgainst.push(<TableCell>{character.name}</TableCell>);
+        heroAgainst.push(<TableRow className='heroAgainstRow'>
+                          <TableCell>{character.name}</TableCell>
+                         </TableRow>);
         return heroAgainst;
       }
     });
@@ -120,11 +122,7 @@ handleHover(feat){
 
           </TableHead>
         <TableBody>
-        <TableRow className='featsRow'>
-        <TableRow>
         {heroAgainst}
-        </TableRow>
-        </TableRow>
         </TableBody>
         </Table>
 
