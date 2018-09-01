@@ -46,6 +46,7 @@ handleHover(feat){
     var featArray2=[];
     var featArray3=[];
     var featArray4=[];
+    var heroAgainst=[];
 
 
 
@@ -55,6 +56,7 @@ handleHover(feat){
     const {hero} = this.props.match.params;
 
     heroesArray.map((character,i)=>{
+
       if (character.name.toUpperCase() == hero.toUpperCase()) {
          selectedHero.push(
             <div className='selectedInfo' key={i}>
@@ -74,9 +76,12 @@ handleHover(feat){
               }else {
                 featArray4.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
               }
+              return selectedHero,featArray1,featArray2,featArray3,featArray4;
 
           })
-        return selectedHero,featArray1,featArray2,featArray3,featArray4;
+      }else{
+        heroAgainst.push(<TableCell>{character.name}</TableCell>);
+        return heroAgainst;
       }
     });
 
@@ -111,14 +116,14 @@ handleHover(feat){
 
         <Table className='heroOverviewTable'>
           <TableHead>
-            <TableRow>
-            <TableCell><h1>Weak Against</h1></TableCell>
-            <TableCell><h1>Strong Against</h1></TableCell>
+          <TableCell><h1>Against</h1></TableCell>
 
-            </TableRow>
           </TableHead>
         <TableBody>
         <TableRow className='featsRow'>
+        <TableRow>
+        {heroAgainst}
+        </TableRow>
         </TableRow>
         </TableBody>
         </Table>

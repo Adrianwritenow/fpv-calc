@@ -1,7 +1,7 @@
 import feats from '../../feats';
 
 export default{
-  name:'SHaman',
+  name:'Shaman',
   role:'Assassin',
   faction:'Vikings',
   image:'images/heroes/vikings/shaman.png',
