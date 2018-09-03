@@ -81,9 +81,9 @@ handleHover(feat){
           })
       }else{
         heroAgainst.push(<TableRow className='heroAgainstRow'>
-                          <TableCell><button></button></TableCell>
+                          <TableCell><button></button><TableCell>NUM1</TableCell></TableCell>
                           <TableCell>{character.name}</TableCell>
-                          <TableCell><button></button></TableCell>
+                          <TableCell><button></button><TableCell>NUM2</TableCell></TableCell>
                          </TableRow>);
         return heroAgainst;
       }
