@@ -5,7 +5,7 @@ sharpenBlade:{name:'Sharpen Blade',level:3,info:'Attacks inflict low Damage over
 pugnoMortis:{name:'Pugno Mortis',level:3,info:'Throw an explosive projectile dealing damage over an area.',image:'images/feats/level3/pugnoMortis.png'},
 takedown:{name:'Takedown',level:3,info:'Throws make enemies fall to the ground.',image:'images/feats/level3/takedown.png'},
 protectedRevive:{name:'Protected Revive',level:3,info:'Your revive is protected & grants allies health',image:'images/feats/level3/protectedRevive.png'},
-neptunesWarth:{name:'Neptune\'s Wrath',level:3,info:'Throw a trident for moderate Damage',image:'images/feats/level3/neptunesWarth.png'},
+neptunesWrath:{name:'Neptune\'s Wrath',level:3,info:'Throw a trident for moderate Damage',image:'images/feats/level3/neptunesWrath.png'},
 boleadoras:{name:'Boleadoras',level:3,info:'Projectile that deals low damage and traps an enemy for a short time',image:'images/feats/level3/boleadoras.png'},
 punchThrough:{name:'Punch Through',level:3,info:'Passive | Deal damage on blocked attacks. (Kind of a useless passive according to testing)',image:'images/feats/level3/punchThrough.png'},
 healOnBlock:{name:'Heal on Block',level:3,info:'Passive | Blocking regenerates your health.',image:'images/feats/level3/healOnBlock.png'},
