@@ -80,10 +80,10 @@ handleHover(feat){
 
           })
       }else{
-        heroAgainst.push(<TableRow className='heroAgainstRow'>
-                          <TableCell><button></button><TableCell>NUM1</TableCell></TableCell>
+        heroAgainst.push(<TableRow className='heroAgainstRow' key={i}>
+                          <TableCell><button></button><p>NUM1</p></TableCell>
                           <TableCell>{character.name}</TableCell>
-                          <TableCell><button></button><TableCell>NUM2</TableCell></TableCell>
+                          <TableCell><button></button><p>NUM2</p></TableCell>
                          </TableRow>);
         return heroAgainst;
       }
@@ -92,7 +92,7 @@ handleHover(feat){
     return (
       <Paper className='heroOverviewContainer'>
         {selectedHero}
-        <Table className='heroOverviewTable'>
+        <Table className='heroFeatTable'>
           <TableHead>
             <TableRow>
             <TableCell><h1>Feats</h1></TableCell>
@@ -118,7 +118,7 @@ handleHover(feat){
         </TableBody>
         </Table>
 
-        <Table className='heroOverviewTable'>
+        <Table className='heroVsTable'>
           <TableHead>
             <TableRow>
               <TableCell>Strong Against</TableCell>
@@ -128,6 +128,27 @@ handleHover(feat){
           </TableHead>
         <TableBody>
         {heroAgainst}
+        </TableBody>
+        </Table>
+
+
+        <Table className='topBuildTable'>
+          <TableHead>
+            <TableRow>
+              <TableCell><h1>POPULAR BUILDS</h1></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>By</TableCell>
+              <TableCell>Rating</TableCell>
+            </TableRow>
+          </TableHead>
+        <TableBody>
+        <TableRow>
+          <TableCell>PLACE HOLDER</TableCell>
+          <TableCell>AUTHOR</TableCell>
+          <TableCell>PLACE HOLDER</TableCell>
+        </TableRow>
         </TableBody>
         </Table>
 

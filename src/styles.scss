@@ -27,5 +27,13 @@
 
 .heroOverviewContainer{
   display: flex;
+  flex-wrap: wrap;
   width: auto;
+}
+
+.heroFeatTable{
+  width: 200px!important;
+}
+.heroVsTable{
+  width: 200px!important;
 }
