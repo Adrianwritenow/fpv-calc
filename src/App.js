@@ -5,12 +5,9 @@ import factionSelector from './components/factionSelector';
 import HeroSelector from './components/heroSelector';
 import HeroOverView from './components/heroOverview';
 
-
 import BaseLayout from './components/baseLayout'
 
-
 import Button from '@material-ui/core/Button';
-
 
 
 class App extends Component {
