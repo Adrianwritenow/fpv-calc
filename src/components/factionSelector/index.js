@@ -4,9 +4,6 @@ import factions from '../factions';
 
 class factionSelector extends Component {
 
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:factionSelector");

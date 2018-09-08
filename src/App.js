@@ -4,21 +4,14 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import factionSelector from './components/factionSelector';
 import HeroSelector from './components/heroSelector';
 import HeroOverView from './components/heroOverview';
-import { ConnectedRouter} from 'react-router-redux'
-import {history} from './redux/store';
-
-
 
 import BaseLayout from './components/baseLayout'
 
-import Button from '@material-ui/core/Button';
 
 
 class App extends Component {
   render() {
     return (
-      <ConnectedRouter history={history}>
-
       <BrowserRouter>
         <BaseLayout>
          <Route render={({location})=> console.log(location)|| (
@@ -34,7 +27,6 @@ class App extends Component {
           )}/>
         </BaseLayout>
       </BrowserRouter>
-    </ConnectedRouter>
 
 
     );

@@ -18,7 +18,6 @@ nukekubi:{name:'Nukekubi',level:3,info:'Gain Stamina on successful attacks',imag
 fury:{name:'Fury',level:3,info:'Raise sprint speed slightly and attack and defense greatly.',image:'images/feats/level3/fury.png'},
 battleCry:{name:'Battle Cry',level:3,info:'Increase ally Damage and makes enemy soldiers flee.',image:'images/feats/level3/battleCry.png'},
 toughAsNails:{name:'Tough as Nails',level:3,info:'Passive | Raises max Health when unlocked.',image:'images/feats/level3/toughAsNails.png'},
-battleCry:{name:'Battle Cry',level:3,info:'Increase ally Damage and makes enemy soldiers flee.',image:'images/feats/level3/battleCry.png'},
 throwingAxe:{name:'ThrowingAxe',level:3,info:'Throw an axe that deals medium damage.',image:'images/feats/level3/throwingAxe.png'},
 javelin:{name:'Javelin',level:3,info:'Throw a javelin for moderate damage.',image:'images/feats/level3/javelin.png'},
 }

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import heroes from '../characters';
 import '../../styles.css';
 
-
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableHead from '@material-ui/core/TableHead';
@@ -57,21 +54,21 @@ handleHover(feat){
 
     heroesArray.map((character,i)=>{
 
-      if (character.name.toUpperCase() == hero.toUpperCase()) {
+      if (character.name.toUpperCase() === hero.toUpperCase()) {
          selectedHero.push(
             <div className='selectedInfo' key={i}>
               <p>Name:{character.name}</p>
-              <img src={`../${character.image}`}/>
+              <img src={`../${character.image}`} alt={character.name}/>
               <p>Class:{character.role}</p>
             </div>
           );
 
           character.feats.map((feat,i)=>{
-            if (feat.level == 1) {
+            if (feat.level === 1) {
               featArray1.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
-            }else if (feat.level == 2) {
+            }else if (feat.level === 2) {
               featArray2.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
-            }else if (feat.level == 3) {
+            }else if (feat.level === 3) {
                 featArray3.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
               }else {
                 featArray4.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);

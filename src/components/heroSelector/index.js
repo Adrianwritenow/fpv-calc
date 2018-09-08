@@ -3,15 +3,10 @@ import keyIndex from 'react-key-index';
 import CharacterTile from '../characters/characterTile';
 import heroes from '../characters';
 import '../../styles.css';
-import feats from '../feats';
 
 
 class HeroSelector extends Component {
 
-  constructor(props) {
-    super(props);
-
-  }
 
   componentWillMount(){
 
@@ -31,7 +26,7 @@ class HeroSelector extends Component {
     console.log(heroesArray);
 
     heroesArray.map((hero,i)=>{
-      if (hero.faction.toUpperCase() == faction.toUpperCase()) {
+      if (hero.faction.toUpperCase() === faction.toUpperCase()) {
         heroCardArray.push(
           <CharacterTile character={hero} key={i}/>
         )
