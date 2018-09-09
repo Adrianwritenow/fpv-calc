@@ -14,7 +14,7 @@ const middleware = routerMiddleware(history);
 
 const store = createStore(
   combineReducers({
-    // reducers,
+    reducers,
     routing: routerReducer
   }),compose(applyMiddleware(reduxThunk, middleware),window.devToolsExtension ? window.devToolsExtension() : (x) =>x)
 );
