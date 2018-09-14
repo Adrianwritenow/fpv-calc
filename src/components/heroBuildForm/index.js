@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Form, Text, Scope } from 'informed';
 
-class heroBuildForm extends Component {
+
+class HeroBuildForm extends Component {
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:");
@@ -10,15 +12,14 @@ class heroBuildForm extends Component {
     return (
       <div>
 
-<form >
-First name:<br>
-<input type="text" name="firstname" value="Mickey">
-<br>
-Last name:<br>
-<input type="text" name="lastname" value="Mouse">
-<br><br>
-<input type="submit" value="Submit">
-</form>
+        <Form id="intro-form">
+          <Scope='hero'>
+
+          </Scope>
+          <label htmlFor="intro-name">Build Name:</label>
+          <Text field="name" id="intro-name" />
+          <button type="submit">Submit</button>
+        </Form>;
 
       </div>
 
@@ -26,4 +27,4 @@ Last name:<br>
   }
 }
 
-export default heroBuildForm;
+export default HeroBuildForm;

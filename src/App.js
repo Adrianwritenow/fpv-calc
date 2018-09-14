@@ -4,6 +4,8 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import factionSelector from './components/factionSelector';
 import HeroSelector from './components/heroSelector';
 import HeroOverView from './components/heroOverview';
+import HeroBuildForm from './components/heroBuildForm';
+
 
 import BaseLayout from './components/baseLayout'
 
@@ -21,6 +23,8 @@ class App extends Component {
                 <Route exact path="/" component={factionSelector}/>
                 <Route exact path='/:faction' component={HeroSelector}/>
                 <Route exact path='/:faction/:hero' component={HeroOverView}/>
+                <Route exact path='/buildFOrm' component={HeroBuildForm}/>
+
               </Switch>
             </CSSTransition>
           </TransitionGroup>
