@@ -21,10 +21,9 @@ class App extends Component {
              <CSSTransition key={location.key} classNames='fade'timeout={400}>
                <Switch location={location}>
                 <Route exact path="/" component={factionSelector}/>
+                <Route exact path='/buildForm' component={HeroBuildForm}/>
                 <Route exact path='/:faction' component={HeroSelector}/>
                 <Route exact path='/:faction/:hero' component={HeroOverView}/>
-                <Route exact path='/buildFOrm' component={HeroBuildForm}/>
-
               </Switch>
             </CSSTransition>
           </TransitionGroup>

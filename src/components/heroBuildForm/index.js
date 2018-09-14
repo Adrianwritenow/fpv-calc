@@ -13,7 +13,8 @@ class HeroBuildForm extends Component {
       <div>
 
         <Form id="intro-form">
-          <Scope='hero'>
+          <Scope scope='hero'>
+            <Text field='name' id='heroName'/>
 
           </Scope>
           <label htmlFor="intro-name">Build Name:</label>
