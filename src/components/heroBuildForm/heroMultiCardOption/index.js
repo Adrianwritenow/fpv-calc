@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import keyIndex from 'react-key-index';
 import heroes from '../../characters';
 import HeroMultiCardCell from './../heroMultiCardCell';
+import { Form, Select, Option } from 'informed';
+
 
 import '../../../styles.css';
 
@@ -14,6 +16,9 @@ import Paper from '@material-ui/core/Paper';
 class HeroMultiCardOption extends Component {
   constructor(props) {
   super(props);
+  this.state = {
+    hero:'',
+  };
 
   // This binding is necessary to make `this` work in the callback
   this.handleClick = this.handleClick.bind(this);
@@ -22,6 +27,9 @@ class HeroMultiCardOption extends Component {
  handleClick(hero,e) {
   e.preventDefault();
   console.log('The link was clicked.',hero);
+  this.state.hero = hero;
+  console.log(this.state);
+
 }
 
 
@@ -49,17 +57,14 @@ class HeroMultiCardOption extends Component {
         heroMultiCardK.push(
             <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
-
       }else if (hero.faction.toUpperCase() ==='SAMURAI') {
         heroMultiCardS.push(
             <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
-
       }else {
         heroMultiCardV.push(
             <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
-
       }
         return heroMultiCardK,heroMultiCardS,heroMultiCardV;
     });
@@ -67,6 +72,7 @@ class HeroMultiCardOption extends Component {
       <Paper className='heroMultiCardContainer'>
         <Table className='heroMultiSelectTable'>
           <TableBody>
+
             <TableRow className='featsRow'>
               {heroMultiCardK}
             </TableRow>

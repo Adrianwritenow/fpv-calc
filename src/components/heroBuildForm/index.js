@@ -6,6 +6,7 @@ import HeroMultiCardOption from './heroMultiCardOption';
 
 
 class HeroBuildForm extends Component {
+  
 
   componentDidMount(){
     console.log("COMPONENT MOUNTED:");
@@ -15,15 +16,14 @@ class HeroBuildForm extends Component {
     return (
       <div>
       <Form onChange={formState => console.log(formState.values)}>
-      <HeroMultiCardOption />
-
-          <Scope scope='hero'>
-            <Text field='name' id='heroName'/>
-          </Scope>
-          <label htmlFor="intro-name">Build Name:</label>
-          <Text field="name" id="intro-name" />
-          <button type="submit">Submit</button>
-        </Form>;
+        <HeroMultiCardOption />
+        <Scope scope='hero'>
+          <Text field='name' id='heroName'/>
+        </Scope>
+        <label htmlFor="intro-name">Build Name:</label>
+        <Text field="name" id="intro-name" />
+        <button type="submit">Submit</button>
+      </Form>;
 
       </div>
 
