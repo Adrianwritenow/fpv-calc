@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import keyIndex from 'react-key-index';
-import CharacterTile from '../../characters/characterTile';
 import heroes from '../../characters';
+import HeroMultiCardCell from './../heroMultiCardCell';
+
 import '../../../styles.css';
+
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 
 class HeroMultiCardOption extends Component {
@@ -22,45 +28,45 @@ class HeroMultiCardOption extends Component {
     var heroMultiCardS=[];
     var heroMultiCardV=[];
 
-
-
     var array = Object.values(heroes);
     var heroesArray = keyIndex(array, 1);
-    console.log(heroesArray);
 
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() ==='KNIGHTS') {
         heroMultiCardK.push(
-          <div className='heroMultiCard'>
-            <img src={hero.image} value={hero} key={i} className='heroMultiCard'/>
-          </div>
+            <td key={i}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
 
       }else if (hero.faction.toUpperCase() ==='SAMURAI') {
         heroMultiCardS.push(
-          <div className='heroMultiCard'>
-            <img src={hero.image} value={hero} key={i} className='heroMultiCard'/>
-          </div>
+            <td key={i}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
 
       }else {
         heroMultiCardV.push(
-          <div className='heroMultiCard'>
-            <img src={hero.image} value={hero} key={i} className='heroMultiCard'/>
-          </div>
+            <td key={i}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
 
       }
         return heroMultiCardK,heroMultiCardS,heroMultiCardV;
     });
     return (
-      <div>
-        {heroMultiCardK}
-        {heroMultiCardS}
-        {heroMultiCardV}
-      </div>
+      <Paper className='heroMultiCardContainer'>
+        <Table className='heroMultiSelectTable'>
+          <TableBody>
+            <TableRow className='featsRow'>
+              {heroMultiCardK}
+            </TableRow>
+            <TableRow className='featsRow'>
+              {heroMultiCardS}
+            </TableRow>
+            <TableRow className='featsRow'>
+              {heroMultiCardV}
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Paper>
     );
-
   }
 }
 

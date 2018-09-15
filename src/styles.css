@@ -28,7 +28,21 @@
 .heroVsTable {
   width: 200px !important; }
 
-.heroMultiCard {
-  max-width: 80px; }
+.heroMultiCardImg {
+  max-height: 80px; }
+
+.heroInfoCard {
+  background-color: black; }
+  .heroInfoCard img {
+    max-height: 200px; }
+
+#KNIGHTS {
+  color: gold; }
+
+#SAMURAI {
+  color: seagreen; }
+
+#VIKINGS {
+  color: darkred; }
 
 /*# sourceMappingURL=styles.css.map */
