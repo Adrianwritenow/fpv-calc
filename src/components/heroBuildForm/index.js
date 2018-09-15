@@ -14,8 +14,9 @@ class HeroBuildForm extends Component {
   render() {
     return (
       <div>
+      <Form onChange={formState => console.log(formState.values)}>
       <HeroMultiCardOption />
-      <Form onChange={formState => console.log(formState)}>
+
           <Scope scope='hero'>
             <Text field='name' id='heroName'/>
           </Scope>

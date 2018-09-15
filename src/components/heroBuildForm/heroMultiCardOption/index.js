@@ -12,6 +12,17 @@ import Paper from '@material-ui/core/Paper';
 
 
 class HeroMultiCardOption extends Component {
+  constructor(props) {
+  super(props);
+
+  // This binding is necessary to make `this` work in the callback
+  this.handleClick = this.handleClick.bind(this);
+}
+
+ handleClick(hero,e) {
+  e.preventDefault();
+  console.log('The link was clicked.',hero);
+}
 
 
   componentWillMount(){
@@ -31,20 +42,22 @@ class HeroMultiCardOption extends Component {
     var array = Object.values(heroes);
     var heroesArray = keyIndex(array, 1);
 
+
+
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() ==='KNIGHTS') {
         heroMultiCardK.push(
-            <td key={i}><HeroMultiCardCell key={i} heroProp={hero} /></td>
+            <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
 
       }else if (hero.faction.toUpperCase() ==='SAMURAI') {
         heroMultiCardS.push(
-            <td key={i}><HeroMultiCardCell key={i} heroProp={hero} /></td>
+            <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
 
       }else {
         heroMultiCardV.push(
-            <td key={i}><HeroMultiCardCell key={i} heroProp={hero} /></td>
+            <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
 
       }

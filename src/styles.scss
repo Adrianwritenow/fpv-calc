@@ -42,6 +42,8 @@
 }
 .heroInfoCard{
   background-color:black;
+  display: flex;
+  flex-wrap: wrap;
   img{
     max-height: 200px
   }

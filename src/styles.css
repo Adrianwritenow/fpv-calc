@@ -32,7 +32,9 @@
   max-height: 80px; }
 
 .heroInfoCard {
-  background-color: black; }
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap; }
   .heroInfoCard img {
     max-height: 200px; }
 
