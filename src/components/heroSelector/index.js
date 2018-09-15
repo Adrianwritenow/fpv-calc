@@ -13,7 +13,7 @@ class HeroSelector extends Component {
   }
 
   componentDidMount(){
-    console.log("COMPONENT MOUNTED:faction Heroes");
+    console.log("COMPONENT MOUNTED:faction ");
 
 }
 
