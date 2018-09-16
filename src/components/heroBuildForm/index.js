@@ -7,12 +7,13 @@ class HeroBuildForm extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    hero:'',
-    buildName:'',
-    buildInfo:''
+    hero:null,
+    buildName:null,
+    buildInfo:null
   };
 
   this.handleChange = this.handleChange.bind(this);
+  this.heroSelect = this.heroSelect.bind(this);
 
 }
 
@@ -34,6 +35,15 @@ handleChange(field,e) {
 
 }
 
+heroSelect(hero,e) {
+ e.preventDefault();
+ console.log('The link was clicked.',hero);
+ this.setState({hero:hero});
+ console.log(this.state);
+
+
+}
+
 
 
   componentDidMount(){
@@ -42,16 +52,22 @@ handleChange(field,e) {
 }
 
   render() {
-    var nameField='nameField';
-    var detailField='detailField';
+
+    const nameField='nameField';
+    const detailField='detailField';
+    const heroPicked=this.state.hero;
+
     return (
       <div>
       <form>
-        <HeroMultiCardOption stateProp={this.state} />
-        <input type="text" target="name" onChange={(e) => this.handleChange(nameField, e)} />
+      {heroPicked ? (
+        <img src={this.state.hero.image} alt={this.state.hero.name}/>
+      ):(
+        <HeroMultiCardOption onHeroSelect={this.heroSelect} />
+      )}
+        <input type="text" name="name" onChange={(e) => this.handleChange(nameField, e)} />
         <input type="text" name="details" onChange={(e) => this.handleChange(detailField, e)} />
       </form>;
-
       </div>
 
     );

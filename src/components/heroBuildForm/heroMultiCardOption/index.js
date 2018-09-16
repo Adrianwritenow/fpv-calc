@@ -15,17 +15,13 @@ import Paper from '@material-ui/core/Paper';
 class HeroMultiCardOption extends Component {
   constructor(props) {
   super(props);
-  this.state = this.props.stateProp
+  // this.state = this.props.stateProp
   // This binding is necessary to make `this` work in the callback
-  this.handleClick = this.handleClick.bind(this);
+  // this.handleClick = this.handleClick.bind(this);
 }
 
  handleClick(hero,e) {
-  e.preventDefault();
-  console.log('The link was clicked.',hero);
-  this.props.stateProp.hero = hero;
-  console.log(this.state);
-
+  this.props.onHeroSelect(hero,e)
 }
 
 
