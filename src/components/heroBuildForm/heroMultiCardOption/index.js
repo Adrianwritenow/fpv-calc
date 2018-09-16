@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import keyIndex from 'react-key-index';
+// import keyIndex from 'react-key-index';
 import heroes from '../../characters';
 import HeroMultiCardCell from './../heroMultiCardCell';
 
@@ -43,8 +43,8 @@ class HeroMultiCardOption extends Component {
     var heroMultiCardS=[];
     var heroMultiCardV=[];
 
-    var array = Object.values(heroes);
-    var heroesArray = keyIndex(array, 1);
+    var heroesArray = Object.values(heroes);
+    // var heroesArray = keyIndex(array, 1);
 
 
 
