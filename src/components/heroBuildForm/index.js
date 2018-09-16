@@ -16,14 +16,21 @@ class HeroBuildForm extends Component {
 
 }
 
-handleChange(e) {
+handleChange(field,e) {
  e.preventDefault();
- this.setState({buildName: e.target.value});
- console.log('The event:',e);
 
- console.log('The state:',this.state);
+ if (field==='nameField') {
+   this.setState({buildName: e.target.value});
+   console.log('The state:',this.state);
 
 
+ }else if (field ==='detailField') {
+   this.setState({buildInfo: e.target.value});
+   console.log('The state:',this.state);
+
+
+
+ }
 
 }
 
@@ -35,14 +42,14 @@ handleChange(e) {
 }
 
   render() {
+    var nameField='nameField';
+    var detailField='detailField';
     return (
       <div>
       <form>
         <HeroMultiCardOption stateProp={this.state} />
-        <input type="text" name="name" onChange={this.handleChange} />
-        <input type="text" name="name" />
-
-
+        <input type="text" target="name" onChange={(e) => this.handleChange(nameField, e)} />
+        <input type="text" name="details" onChange={(e) => this.handleChange(detailField, e)} />
       </form>;
 
       </div>
