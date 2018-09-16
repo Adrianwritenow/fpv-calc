@@ -10,12 +10,13 @@ class HeroBuildForm extends Component {
   this.state = {
     hero:null,
     buildName:null,
-    buildInfo:null
+    buildInfo:null,
+    featsPicked:null
   };
 
   this.handleChange = this.handleChange.bind(this);
   this.heroSelect = this.heroSelect.bind(this);
-  // this.featSelect
+  this.featSelect = this.featSelect.bind(this);
 
 }
 
@@ -26,15 +27,22 @@ handleChange(field,e) {
    this.setState({buildName: e.target.value});
    console.log('The state:',this.state);
 
-
  }else if (field ==='detailField') {
    this.setState({buildInfo: e.target.value});
    console.log('The state:',this.state);
 
-
-
  }
 
+}
+
+featSelect(newFeat,e){
+  e.preventDefault();
+  let featLevel=newFeat.level;
+  console.log('new Feat:',newFeat);
+  console.log(`lv${featLevel}`)
+  this.setState((state)=>{
+    return{featsPicked:newFeat};
+})
 }
 
 heroSelect(hero,e) {
@@ -53,6 +61,8 @@ heroSelect(hero,e) {
 
 }
 
+
+
   render() {
 
     const nameField='nameField';
@@ -65,7 +75,7 @@ heroSelect(hero,e) {
       {heroPicked ? (
         <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
-        <FeatPicker heroProp={this.state.hero}/>
+        <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect} featStateProp={this.state.featsPicked}/>
         </div>
 
       ):(

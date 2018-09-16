@@ -20,7 +20,7 @@ class HeroMultiCardOption extends Component {
   // this.handleClick = this.handleClick.bind(this);
 }
 
- handleClick(hero,e) {
+ handleHeroClick(hero,e) {
   this.props.onHeroSelect(hero,e)
 }
 
@@ -47,15 +47,15 @@ class HeroMultiCardOption extends Component {
     heroesArray.map((hero,i)=>{
       if (hero.faction.toUpperCase() ==='KNIGHTS') {
         heroMultiCardK.push(
-            <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
+            <td key={i} onClick={(e)=>this.handleHeroClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
       }else if (hero.faction.toUpperCase() ==='SAMURAI') {
         heroMultiCardS.push(
-            <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
+            <td key={i} onClick={(e)=>this.handleHeroClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
       }else {
         heroMultiCardV.push(
-            <td key={i} onClick={(e)=>this.handleClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
+            <td key={i} onClick={(e)=>this.handleHeroClick(hero,e)}><HeroMultiCardCell key={i} heroProp={hero} /></td>
         )
       }
         return heroMultiCardK,heroMultiCardS,heroMultiCardV;

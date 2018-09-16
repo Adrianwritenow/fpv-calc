@@ -10,24 +10,55 @@ import TableCell from '@material-ui/core/TableCell';
 
 
 
-const FeatPicker = (props) => {
+class FeatPicker extends Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+    hero:this.props.heroProp
+  };
+
+  // This binding is necessary to make `this` work in the callback
+  this.handleClick = this.handlePick.bind(this);
+
+}
+
+
+handlePick(feat,e){
+  console.log('state in the feat form',this.state);
+  e.preventDefault();
+  this.props.onFeatSelect(feat,e);
+}
+
+componentDidMount(){
+  console.log("COMPONENT MOUNTED:");
+
+}
+
+componentDidUpdate(prevState, prevProps){
+  // if (prevProps.state !== prevState.featsPicked) {
+  //   this.setState({});
+
+  // }
+
+}
+
+  render(){
 
     var featArray1=[];
     var featArray2=[];
     var featArray3=[];
     var featArray4=[];
-
-    const hero = props.heroProp;
+    const hero = this.state.hero;
 
           hero.feats.map((feat,i)=>{
             if (feat.level === 1) {
-              featArray1.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level === 2) {
-              featArray2.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray2.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level === 3) {
-                featArray3.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray3.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
               }else {
-                featArray4.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray4.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
               }
               return featArray1,featArray2,featArray3,featArray4;
 
@@ -63,7 +94,7 @@ const FeatPicker = (props) => {
       </Table>
 
     );
-
+  }
 }
 
 export default FeatPicker;
