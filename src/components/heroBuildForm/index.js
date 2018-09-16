@@ -17,6 +17,7 @@ class HeroBuildForm extends Component {
   this.handleChange = this.handleChange.bind(this);
   this.heroSelect = this.heroSelect.bind(this);
   this.featSelect = this.featSelect.bind(this);
+  this.repickHero = this.repickHero.bind(this);
 
 }
 
@@ -54,6 +55,12 @@ heroSelect(hero,e) {
 
 }
 
+repickHero(){
+  this.setState({
+    hero:null,
+    featsPicked:null
+  });
+}
 
 
   componentDidMount(){
@@ -76,6 +83,7 @@ heroSelect(hero,e) {
         <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
         <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect} featStateProp={this.state.featsPicked}/>
+        <button onClick={this.repickHero}>New Hero</button>
         </div>
 
       ):(
