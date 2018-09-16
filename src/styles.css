@@ -47,4 +47,8 @@
 #VIKINGS {
   color: darkred; }
 
+.buildCreateOverview {
+  display: flex;
+  flex-wrap: wrap; }
+
 /*# sourceMappingURL=styles.css.map */

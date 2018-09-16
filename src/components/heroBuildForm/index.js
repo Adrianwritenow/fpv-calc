@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HeroMultiCardOption from './heroMultiCardOption';
+import FeatPicker from './featPicker';
 
 
 
@@ -14,6 +15,7 @@ class HeroBuildForm extends Component {
 
   this.handleChange = this.handleChange.bind(this);
   this.heroSelect = this.heroSelect.bind(this);
+  // this.featSelect
 
 }
 
@@ -61,7 +63,11 @@ heroSelect(hero,e) {
       <div>
       <form>
       {heroPicked ? (
+        <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
+        <FeatPicker heroProp={this.state.hero}/>
+        </div>
+
       ):(
         <HeroMultiCardOption onHeroSelect={this.heroSelect} />
       )}
