@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import keyIndex from 'react-key-index';
 import heroes from '../../characters';
 import HeroMultiCardCell from './../heroMultiCardCell';
-import { Form, Select, Option } from 'informed';
 
 
 import '../../../styles.css';
@@ -16,10 +15,7 @@ import Paper from '@material-ui/core/Paper';
 class HeroMultiCardOption extends Component {
   constructor(props) {
   super(props);
-  this.state = {
-    hero:'',
-  };
-
+  this.state = this.props.stateProp
   // This binding is necessary to make `this` work in the callback
   this.handleClick = this.handleClick.bind(this);
 }
@@ -27,7 +23,7 @@ class HeroMultiCardOption extends Component {
  handleClick(hero,e) {
   e.preventDefault();
   console.log('The link was clicked.',hero);
-  this.state.hero = hero;
+  this.props.stateProp.hero = hero;
   console.log(this.state);
 
 }
