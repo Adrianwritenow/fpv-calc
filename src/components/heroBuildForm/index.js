@@ -11,7 +11,12 @@ class HeroBuildForm extends Component {
     hero:null,
     buildName:null,
     buildInfo:null,
-    featsPicked:null
+    featsPicked:{
+      lv1:null,
+      lv2:null,
+      lv3:null,
+      lv4:null
+    }
   };
 
   this.handleChange = this.handleChange.bind(this);
@@ -41,9 +46,12 @@ featSelect(newFeat,e){
   let featLevel=newFeat.level;
   console.log('new Feat:',newFeat);
   console.log(`lv${featLevel}`)
-  this.setState((state)=>{
-    return{featsPicked:newFeat};
-})
+  this.setState(prevState =>({
+    featsPicked:{
+    ...prevState.featsPicked,
+    [`lv${featLevel}`]:newFeat
+    }
+  }));
 }
 
 heroSelect(hero,e) {
