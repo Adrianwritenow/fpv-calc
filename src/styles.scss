@@ -61,3 +61,19 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.KnightsFeatPick0{
+  background-color: gold;
+}
+
+.KnightsFeatPick0>div:first-child{
+ opacity:.5;
+}
+
+.KnightsFeatPick1{
+  background-color: gold;
+}
+
+.KnightsFeatPick1>div:first-child{
+ opacity:.5;
+}
