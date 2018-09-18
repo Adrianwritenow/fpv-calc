@@ -15,9 +15,11 @@ class FeatPicker extends Component {
   super(props);
   this.state = {
     hero:this.props.heroProp,
-    condition0:false,
-    condition1:false
-
+    feats:{
+      lv0:false,
+      lv1:false,
+      lv2:false
+    }
   };
 
   // This binding is necessary to make `this` work in the callback
@@ -28,14 +30,19 @@ class FeatPicker extends Component {
 
 handlePick(feat,e,i){
   e.preventDefault();
-
-  var value=`condition${i}`
+  var lv = feat.level;
+  var value= 'lv'+i;
 
   this.props.onFeatSelect(feat,e);
   this.setState({
-    [`condition${i}`]:!this.state[value]
+    feats:{
+      [`lv${i}`]:!this.state[value]    
+    }
+
   })
-  console.log('state in the feat form',this.state[value]);
+  console.log('state in the feat form',this.state);
+  console.log('feat lv',feat.level);
+
 
 }
 
@@ -55,10 +62,11 @@ componentDidMount(){
 
 
           hero.feats.map((feat,i)=>{
-            var value=`condition${i}`
+            var lv=feat.level;
+            var value='lv'+i;
 
             if (feat.level === 1) {
-              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} className={ this.state[value] ? `${hero.faction}FeatPick${i}` : "featPick" }><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feats[value] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level === 2) {
               featArray2.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level === 3) {
