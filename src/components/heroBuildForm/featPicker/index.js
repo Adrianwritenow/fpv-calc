@@ -15,10 +15,23 @@ class FeatPicker extends Component {
   super(props);
   this.state = {
     hero:this.props.heroProp,
-    feats:{
-      lv0:false,
-      lv1:false,
-      lv2:false
+    feat1:{
+      index0:false,
+      index1:false,
+      index2:false
+    },
+    feat2:{
+      index3:false,
+      index4:false,
+      index5:false
+    },feat3:{
+      index6:false,
+      index7:false,
+      index8:false
+    },feat4:{
+      index9:false,
+      index10:false,
+      index11:false
     }
   };
 
@@ -31,15 +44,19 @@ class FeatPicker extends Component {
 handlePick(feat,e,i){
   e.preventDefault();
   var lv = feat.level;
-  var value= 'lv'+i;
+  var stateVar=this.state[`feat${lv}`];
 
   this.props.onFeatSelect(feat,e);
   this.setState({
-    feats:{
-      [`lv${i}`]:!this.state[value]    
+    [`feat${lv}`]:{
+      [`index${i}`]:!stateVar[`index${i}`]
     }
 
-  })
+  });
+
+
+
+
   console.log('state in the feat form',this.state);
   console.log('feat lv',feat.level);
 
@@ -62,17 +79,15 @@ componentDidMount(){
 
 
           hero.feats.map((feat,i)=>{
-            var lv=feat.level;
-            var value='lv'+i;
 
             if (feat.level === 1) {
-              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feats[value] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat1[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level === 2) {
-              featArray2.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray2.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat2[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
             }else if (feat.level === 3) {
-                featArray3.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray3.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat3[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
               }else {
-                featArray4.push(<td onClick={(e)=>this.handlePick(feat,e)} key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray4.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat4[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
               }
               return featArray1,featArray2,featArray3,featArray4;
 
