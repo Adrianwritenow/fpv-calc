@@ -51,24 +51,13 @@ handlePick(feat,e,i){
     [`feat${lv}`]:{
       [`index${i}`]:!stateVar[`index${i}`]
     }
-
   });
-
-
-
-
-  console.log('state in the feat form',this.state);
-  console.log('feat lv',feat.level);
-
-
 }
 
 componentDidMount(){
   console.log("COMPONENT MOUNTED:");
 
 }
-
-
   render(){
 
     var featArray1=[];
