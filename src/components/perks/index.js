@@ -1,0 +1,25 @@
+export default{
+  aegis:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  bastion:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  bulkUp:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  cleverTactics:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  crushThem:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  devourer:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  earlyReaper:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  endurance:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  felineAgility:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  freshFocus:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  galestorm:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  headHunter:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  lastStand:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  radiantRebound:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  rapidRefresh:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  remedy:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  risingDawn:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  shieldsUp:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  supersonic:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  survivalInstinct:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+  vengefulBarrier:{name:'Aegis',info:'All shields received are increaed by 20% ',image:'images/perks/aegis.png'},
+
+
+}
