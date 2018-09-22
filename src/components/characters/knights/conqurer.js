@@ -1,4 +1,6 @@
 import feats from '../../feats';
+import perks from '../../perks';
+
 
 export default{
   name:'Conqurer',
