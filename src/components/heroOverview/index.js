@@ -44,6 +44,13 @@ handleHover(feat){
     var featArray3=[];
     var featArray4=[];
     var heroAgainst=[];
+    var perkArrayCommon=[];
+    var perkArrayRare=[];
+    var perkArrayHeroic=[];
+    var perkArrayEpic=[];
+    var perkArrayLegendary=[];
+
+
 
 
 
@@ -65,17 +72,28 @@ handleHover(feat){
 
           character.feats.map((feat,i)=>{
             if (feat.level === 1) {
-              featArray1.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray1.push(<td key={i}><FeatTableCell key={i} heroItem={feat}/></td>);
             }else if (feat.level === 2) {
-              featArray2.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray2.push(<td key={i}><FeatTableCell key={i} heroItem={feat}/></td>);
             }else if (feat.level === 3) {
-                featArray3.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray3.push(<td key={i}><FeatTableCell key={i} heroItem={feat}/></td>);
               }else {
-                featArray4.push(<td key={i}><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray4.push(<td key={i}><FeatTableCell key={i} heroItem={feat}/></td>);
               }
               return selectedHero,featArray1,featArray2,featArray3,featArray4;
-
           })
+
+          character.perks.common.map((perk,i)=>{
+            perkArrayCommon.push(<td key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
+            return perkArrayCommon;
+          })
+
+          perkArrayRare.push(<td key={i}><FeatTableCell key={i} heroItem={character.perks.rare}/></td>);
+          perkArrayHeroic.push(<td key={i}><FeatTableCell key={i} heroItem={character.perks.heroic}/></td>)
+          perkArrayEpic.push(<td key={i}><FeatTableCell key={i} heroItem={character.perks.epic}/></td>)
+          perkArrayLegendary.push(<td key={i}><FeatTableCell key={i} heroItem={character.perks.legendary}/></td>)
+
+
       }else{
         heroAgainst.push(<TableRow className='heroAgainstRow' value={character} key={i}>
                           <TableCell><button></button><p>NUM1</p></TableCell>
@@ -114,6 +132,46 @@ handleHover(feat){
         </TableRow>
         </TableBody>
         </Table>
+
+
+
+
+        <Table className='heroPerkTable'>
+          <TableHead>
+            <TableRow>
+            <TableCell><h1>PERKS</h1></TableCell>
+            </TableRow>
+          </TableHead>
+        <TableBody>
+        <TableRow className='perksRow'>
+        <TableCell  scope="row">COMMON</TableCell>
+          {perkArrayCommon}
+        </TableRow>
+        <TableRow className='perksRow'>
+        <TableCell  scope="row">RARE</TableCell>
+          {perkArrayRare}
+        </TableRow>
+        <TableRow className='perksRow'>
+        <TableCell  scope="row">HEROIC</TableCell>
+        {perkArrayHeroic}
+        </TableRow>
+        <TableRow className='perksRow'>
+        <TableCell>EPIC</TableCell>
+        {perkArrayEpic}
+        </TableRow>
+        <TableRow className='perksRow'>
+        <TableCell>LEGENDARY</TableCell>
+        {perkArrayLegendary}
+        </TableRow>
+        </TableBody>
+        </Table>
+
+
+
+
+
+
+
 
         <Table className='heroVsTable'>
           <TableHead>

@@ -15,10 +15,10 @@ const FeatTableCell = (props) => {
   return(
     <ReactHover options={optionsCursorTrueWithMargin}>
       <ReactHover.Trigger type='trigger'>
-        <img src ={`../${props.featProp.image}`} alt={props.featProp.name}/>
+        <img src ={`../${props.heroItem.image}`} alt={props.heroItem.name}/>
       </ReactHover.Trigger>
       <ReactHover.Hover type='hover'>
-          <FeatDetail featInfo={props.featProp}/>
+          <FeatDetail itemInfo={props.heroItem}/>
       </ReactHover.Hover>
     </ReactHover>
 

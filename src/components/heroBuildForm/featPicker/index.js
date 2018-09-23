@@ -70,13 +70,13 @@ componentDidMount(){
           hero.feats.map((feat,i)=>{
 
             if (feat.level === 1) {
-              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat1[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray1.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat1[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} heroItem={feat}/></td>);
             }else if (feat.level === 2) {
-              featArray2.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat2[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
+              featArray2.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat2[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} heroItem={feat}/></td>);
             }else if (feat.level === 3) {
-                featArray3.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat3[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray3.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat3[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} heroItem={feat}/></td>);
               }else {
-                featArray4.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat4[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} featProp={feat}/></td>);
+                featArray4.push(<td onClick={(e)=>this.handlePick(feat,e,i)} key={i} id={i} className={ this.state.feat4[`index${i}`] ? `${hero.faction}FeatPick${i}` : null }><FeatTableCell key={i} heroItem={feat}/></td>);
               }
               return featArray1,featArray2,featArray3,featArray4;
 
