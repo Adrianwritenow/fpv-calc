@@ -93,7 +93,7 @@ componentDidMount(){
           });
 
           hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePick(perk,e,i)} key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
