@@ -33,7 +33,12 @@ class FeatPicker extends Component {
       index10:false,
       index11:false
     }
+
+    perk1:false,
+    perk2:false,
+    perk3:false
   };
+
 
   // This binding is necessary to make `this` work in the callback
   this.handleClick = this.handlePick.bind(this);
@@ -64,6 +69,11 @@ componentDidMount(){
     var featArray2=[];
     var featArray3=[];
     var featArray4=[];
+    var perkArrayCommon=[];
+    var perkArrayRare=[];
+    var perkArrayHeroic=[];
+    var perkArrayEpic=[];
+    var perkArrayLegendary=[];
     const hero = this.state.hero;
 
 
@@ -81,6 +91,19 @@ componentDidMount(){
               return featArray1,featArray2,featArray3,featArray4;
 
           });
+
+          hero.perks.common.map((perk,i)=>{
+            perkArrayCommon.push(<td key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
+            return perkArrayCommon;
+          })
+
+          perkArrayRare.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.heroic}/></td>)
+          perkArrayEpic.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.epic}/></td>)
+          perkArrayLegendary.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.legendary}/></td>)
+
+
+
 
 
 

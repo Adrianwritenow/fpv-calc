@@ -24,7 +24,6 @@ class HeroOverView extends Component {
   }
 
 
-
   componentWillMount(){
 
   }
@@ -49,11 +48,6 @@ handleHover(feat){
     var perkArrayHeroic=[];
     var perkArrayEpic=[];
     var perkArrayLegendary=[];
-
-
-
-
-
 
 
     var heroesArray = Object.values(heroes);
@@ -133,9 +127,6 @@ handleHover(feat){
         </TableBody>
         </Table>
 
-
-
-
         <Table className='heroPerkTable'>
           <TableHead>
             <TableRow>
@@ -165,13 +156,6 @@ handleHover(feat){
         </TableRow>
         </TableBody>
         </Table>
-
-
-
-
-
-
-
 
         <Table className='heroVsTable'>
           <TableHead>
