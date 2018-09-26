@@ -135,7 +135,7 @@ componentDidMount(){
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(perk,e,i,rare)><FeatTableCell heroItem={hero.perks.rare}/></td>);
           perkArrayHeroic.push(<td ><FeatTableCell heroItem={hero.perks.heroic}/></td>)
           perkArrayEpic.push(<td ><FeatTableCell  heroItem={hero.perks.epic}/></td>)
           perkArrayLegendary.push(<td><FeatTableCell heroItem={hero.perks.legendary}/></td>)
