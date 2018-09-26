@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeroMultiCardOption from './heroMultiCardOption';
 import FeatPicker from './featPicker';
+import PerkPicker from './perkPicker';
 
 
 
@@ -67,7 +68,6 @@ featSelect(newFeat,e){
         [`lv${featLevel}`]:undefined
         }
       }));
-
     }
   }else {
     this.setState(prevState =>({
@@ -76,9 +76,7 @@ featSelect(newFeat,e){
         [`lv${featLevel}`]:newFeat
         }
       }));
-
   }
-
 }
 
 perkSelect(newPerk,e,value){
@@ -89,10 +87,6 @@ perkSelect(newPerk,e,value){
     [value.rarity]:newPerk
     }
   }));
-
-
-
-
 }
 
 heroSelect(hero,e) {
@@ -131,7 +125,8 @@ repickHero(){
       {heroPicked ? (
         <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
-        <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect} onPerkSelect={this.perkSelect} featStateProp={this.state.featsPicked}/>
+        <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect}  featStateProp={this.state.featsPicked}/>
+        <PerkPicker heroProp={this.state.hero} onPerkSelect={this.perkSelect} featStateProp={this.state.perksPicked}/>
         <button onClick={this.repickHero}>New Hero</button>
         </div>
 
