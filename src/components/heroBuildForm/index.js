@@ -55,9 +55,8 @@ featSelect(newFeat,e){
   e.preventDefault();
   let featLevel=newFeat.level;
   let featRemove=this.state.featsPicked[`lv${featLevel}`];
-  console.log('featRemove:',featRemove);
 
-  if (featRemove != null) {
+  if ( featRemove != undefined) {
     let featNameCheck = featRemove.name.toString();
     if (featNameCheck == newFeat.name) {
 
@@ -70,13 +69,16 @@ featSelect(newFeat,e){
       }));
 
     }
+  }else {
+    this.setState(prevState =>({
+        featsPicked:{
+        ...prevState.featsPicked,
+        [`lv${featLevel}`]:newFeat
+        }
+      }));
+
   }
-  // this.setState(prevState =>({
-  //     featsPicked:{
-  //     ...prevState.featsPicked,
-  //     [`lv${featLevel}`]:newFeat
-  //     }
-  //   }));
+
 }
 
 perkSelect(newPerk,e,value){
