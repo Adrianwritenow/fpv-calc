@@ -32,9 +32,14 @@ class FeatPicker extends Component {
       index9:false,
       index10:false,
       index11:false
-    }
+    },
+    perkValue:[''],
 
-    perk1:false,
+    perk1:{
+      index0:false,
+      index1:false,
+      index2:false
+    },
     perk2:false,
     perk3:false
   };
@@ -42,6 +47,8 @@ class FeatPicker extends Component {
 
   // This binding is necessary to make `this` work in the callback
   this.handleClick = this.handlePick.bind(this);
+  this.handlePerk = this.handlePerk.bind(this);
+
 
 }
 
@@ -57,6 +64,15 @@ handlePick(feat,e,i){
       [`index${i}`]:!stateVar[`index${i}`]
     }
   });
+}
+
+
+handlePerk(perk,e,i,value){
+  e.preventDefault();
+  this.props.onPerkSelect(perk,e,value);
+
+
+
 }
 
 componentDidMount(){
@@ -75,6 +91,28 @@ componentDidMount(){
     var perkArrayEpic=[];
     var perkArrayLegendary=[];
     const hero = this.state.hero;
+    var common = {
+      rarity:'common',
+      cost:.8
+    };
+    var rare = {
+      rarity:'rare',
+      cost:1
+    };
+    var heroic = {
+      rarity:'heroic',
+      cost:1.5
+    };
+    var epic = {
+      rarity:'epic',
+      cost:1.5
+    };
+    var legendary = {
+      rarity:'legendary',
+      cost:1.5
+    };
+
+
 
 
           hero.feats.map((feat,i)=>{
@@ -93,14 +131,14 @@ componentDidMount(){
           });
 
           hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePick(perk,e,i)} key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,i,common)} key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.heroic}/></td>)
-          perkArrayEpic.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.epic}/></td>)
-          perkArrayLegendary.push(<td key={i}><FeatTableCell key={i} heroItem={hero.perks.legendary}/></td>)
+          perkArrayRare.push(<td ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td ><FeatTableCell heroItem={hero.perks.heroic}/></td>)
+          perkArrayEpic.push(<td ><FeatTableCell  heroItem={hero.perks.epic}/></td>)
+          perkArrayLegendary.push(<td><FeatTableCell heroItem={hero.perks.legendary}/></td>)
 
 
 

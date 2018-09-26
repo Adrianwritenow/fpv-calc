@@ -16,12 +16,22 @@ class HeroBuildForm extends Component {
       lv2:null,
       lv3:null,
       lv4:null
+    },
+    perkValue:null,
+    perksPicked:{
+      common:null,
+      rare:null,
+      heroic:null,
+      epic:null,
+      legendary:null
     }
   };
 
   this.handleChange = this.handleChange.bind(this);
+
   this.heroSelect = this.heroSelect.bind(this);
   this.featSelect = this.featSelect.bind(this);
+  this.perkSelect = this.perkSelect.bind(this);
   this.repickHero = this.repickHero.bind(this);
 
 }
@@ -44,14 +54,36 @@ handleChange(field,e) {
 featSelect(newFeat,e){
   e.preventDefault();
   let featLevel=newFeat.level;
-  console.log('new Feat:',newFeat);
-  console.log(`lv${featLevel}`)
+  let featRemove=this.state.featsPicked[`lv${featLevel}`];
+  console.log('featRemove:',featRemove);
+  if (featRemove != null) {
+    let featNameCheck = featRemove.name.toString();
+    if (featNameCheck == newFeat.name) {
+
+      console.log('remove it')
+      this.setState(prevState =>({
+        featsPicked:{
+        ...prevState.featsPicked,
+        [`lv${featLevel}`]:undefined
+        }
+      }));
+
+    }
+  }
+}
+
+perkSelect(newPerk,e,value){
+  e.preventDefault();
   this.setState(prevState =>({
-    featsPicked:{
-    ...prevState.featsPicked,
-    [`lv${featLevel}`]:newFeat
+    perksPicked:{
+    ...prevState.perksPicked,
+    [value.rarity]:newPerk
     }
   }));
+
+
+
+
 }
 
 heroSelect(hero,e) {
@@ -90,7 +122,7 @@ repickHero(){
       {heroPicked ? (
         <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
-        <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect} featStateProp={this.state.featsPicked}/>
+        <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect} onPerkSelect={this.perkSelect} featStateProp={this.state.featsPicked}/>
         <button onClick={this.repickHero}>New Hero</button>
         </div>
 
