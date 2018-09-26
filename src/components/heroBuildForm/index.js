@@ -8,22 +8,22 @@ class HeroBuildForm extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    hero:null,
-    buildName:null,
-    buildInfo:null,
+    hero:undefined,
+    buildName:undefined,
+    buildInfo:undefined,
     featsPicked:{
-      lv1:null,
-      lv2:null,
-      lv3:null,
-      lv4:null
+      lv1:undefined,
+      lv2:undefined,
+      lv3:undefined,
+      lv4:undefined
     },
-    perkValue:null,
+    perkValue:undefined,
     perksPicked:{
-      common:null,
-      rare:null,
-      heroic:null,
-      epic:null,
-      legendary:null
+      common:undefined,
+      rare:undefined,
+      heroic:undefined,
+      epic:undefined,
+      legendary:undefined
     }
   };
 
@@ -56,6 +56,7 @@ featSelect(newFeat,e){
   let featLevel=newFeat.level;
   let featRemove=this.state.featsPicked[`lv${featLevel}`];
   console.log('featRemove:',featRemove);
+
   if (featRemove != null) {
     let featNameCheck = featRemove.name.toString();
     if (featNameCheck == newFeat.name) {
@@ -70,6 +71,12 @@ featSelect(newFeat,e){
 
     }
   }
+  // this.setState(prevState =>({
+  //     featsPicked:{
+  //     ...prevState.featsPicked,
+  //     [`lv${featLevel}`]:newFeat
+  //     }
+  //   }));
 }
 
 perkSelect(newPerk,e,value){
