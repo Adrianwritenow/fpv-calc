@@ -18,12 +18,7 @@ class HeroBuildForm extends Component {
       lv3:undefined,
       lv4:undefined
     },
-    perkValue:[],
-    perksPicked:{
-      perk1:undefined,
-      perk2:undefined,
-      perk3:undefined
-    }
+    perksPicked:[]
   };
 
   this.handleChange = this.handleChange.bind(this);
@@ -79,19 +74,16 @@ featSelect(newFeat,e){
 
 perkSelect(newPerk,e,value){
   e.preventDefault();
+  newPerk.rating = value;
 
-  if (this.state.perkValue.length < 3 ) {
-
-
+  if (this.state.perksPicked.length < 3 ) {
+    this.setState({
+      perksPicked: [...this.state.perksPicked, newPerk]
+    });
   }
 
 
-  this.setState(prevState =>({
-    perksPicked:{
-    ...prevState.perksPicked,
-    [value.rarity]:newPerk
-    }
-  }));
+
 }
 
 heroSelect(hero,e) {
