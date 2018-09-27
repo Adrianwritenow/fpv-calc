@@ -73,6 +73,7 @@ handlePerk(perk,e,i,value){
 
 
 
+
 }
 
 componentDidMount(){
@@ -136,9 +137,9 @@ componentDidMount(){
           })
 
           perkArrayRare.push(<td onClick={(e)=>this.handlePerk(perk,e,i,rare)><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td ><FeatTableCell heroItem={hero.perks.heroic}/></td>)
-          perkArrayEpic.push(<td ><FeatTableCell  heroItem={hero.perks.epic}/></td>)
-          perkArrayLegendary.push(<td><FeatTableCell heroItem={hero.perks.legendary}/></td>)
+          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(perk,e,i,heroic)><FeatTableCell heroItem={hero.perks.heroic}/></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(perk,e,i,epic)><FeatTableCell  heroItem={hero.perks.epic}/></td>)
+          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(perk,e,i,legendary)><FeatTableCell heroItem={hero.perks.legendary}/></td>)
 
 
 

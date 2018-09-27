@@ -18,13 +18,11 @@ class HeroBuildForm extends Component {
       lv3:undefined,
       lv4:undefined
     },
-    perkValue:undefined,
+    perkValue:[],
     perksPicked:{
-      common:undefined,
-      rare:undefined,
-      heroic:undefined,
-      epic:undefined,
-      legendary:undefined
+      perk1:undefined,
+      perk2:undefined,
+      perk3:undefined
     }
   };
 
@@ -81,6 +79,13 @@ featSelect(newFeat,e){
 
 perkSelect(newPerk,e,value){
   e.preventDefault();
+
+  if (this.state.perkValue.length < 3 ) {
+
+
+  }
+
+
   this.setState(prevState =>({
     perksPicked:{
     ...prevState.perksPicked,
