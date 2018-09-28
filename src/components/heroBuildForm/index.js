@@ -78,8 +78,14 @@ perkSelect(newPerk,e,value){
   console.log('newPerk:',newPerk);
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
+  let perkValueSum = 0;
 
 
+  for (var i = 0; i < perkStateLength; i++) {
+    let perkArrayIndex = perkStateArray[`${i}`]
+     perkValueSum += perkArrayIndex.rating.cost;
+    console.log('perkValSum:',perkValueSum);
+  }
 
 
   if (perkStateLength < 3 ) {

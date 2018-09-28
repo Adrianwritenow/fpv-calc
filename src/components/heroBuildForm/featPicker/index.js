@@ -33,11 +33,12 @@ class FeatPicker extends Component {
       index10:false,
       index11:false
     }
+  }
 
 
 
   // This binding is necessary to make `this` work in the callback
-  this.handleClick = this.handlePick.bind(this);
+  this.handlePick = this.handlePick.bind(this);
 
 
 }
