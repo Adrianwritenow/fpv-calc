@@ -32,22 +32,12 @@ class FeatPicker extends Component {
       index9:false,
       index10:false,
       index11:false
-    },
-    perkValue:[''],
+    }
 
-    perk1:{
-      index0:false,
-      index1:false,
-      index2:false
-    },
-    perk2:false,
-    perk3:false
-  };
 
 
   // This binding is necessary to make `this` work in the callback
   this.handleClick = this.handlePick.bind(this);
-  this.handlePerk = this.handlePerk.bind(this);
 
 
 }
@@ -66,15 +56,6 @@ handlePick(feat,e,i){
   });
 }
 
-
-handlePerk(perk,e,value){
-  e.preventDefault();
-  this.props.onPerkSelect(perk,e,value);
-
-
-
-
-}
 
 componentDidMount(){
   console.log("COMPONENT MOUNTED:");
