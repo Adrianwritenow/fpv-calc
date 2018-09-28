@@ -92,26 +92,7 @@ componentDidMount(){
     var perkArrayEpic=[];
     var perkArrayLegendary=[];
     const hero = this.state.hero;
-    var common = {
-      rarity:'common',
-      cost:.8
-    };
-    var rare = {
-      rarity:'rare',
-      cost:1
-    };
-    var heroic = {
-      rarity:'heroic',
-      cost:1.5
-    };
-    var epic = {
-      rarity:'epic',
-      cost:1.5
-    };
-    var legendary = {
-      rarity:'legendary',
-      cost:1.5
-    };
+
 
 
 
@@ -130,20 +111,6 @@ componentDidMount(){
               return featArray1,featArray2,featArray3,featArray4;
 
           });
-
-          hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,i,common)} key={i}><FeatTableCell key={i} heroItem={perk}/></td>);
-            return perkArrayCommon;
-          });
-
-          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)}><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)}><FeatTableCell heroItem={hero.perks.heroic}/></td>);
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)}><FeatTableCell  heroItem={hero.perks.epic}/></td>)
-          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)}><FeatTableCell heroItem={hero.perks.legendary}/></td>);
-
-
-
-
 
 
     return (
