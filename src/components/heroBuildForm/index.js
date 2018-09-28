@@ -75,10 +75,16 @@ featSelect(newFeat,e){
 perkSelect(newPerk,e,value){
   e.preventDefault();
   newPerk.rating = value;
+  console.log('newPerk:',newPerk);
+  let perkStateArray = this.state.perksPicked;
+  let perkStateLength = perkStateArray.length;
 
-  if (this.state.perksPicked.length < 3 ) {
+
+
+
+  if (perkStateLength < 3 ) {
     this.setState({
-      perksPicked: [...this.state.perksPicked, newPerk]
+      perksPicked: [...perkStateArray, newPerk]
     });
   }
 
