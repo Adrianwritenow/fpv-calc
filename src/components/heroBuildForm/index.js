@@ -90,32 +90,39 @@ perkSelect(newPerk,e,value){
     this.setState({
       perksPicked: [...perkStateArray, newPerk]
     });
-  }
+    ///need to push to perkcostarray
+  }else {
+
+    for (var i = 0; i < perkStateLength; i++) {
+      let perkArrayIndex = perkStateArray[`${i}`];
+      let perkValueSum = costArray.reduce(getSum);
+      // console.log('perkValueSum', perkValueSum);
 
 
-  for (var i = 0; i < perkStateLength; i++) {
-    let perkArrayIndex = perkStateArray[`${i}`];
+          if (perkValueSum < 3) {
+            console.log('Sum Check',perkValueSum)
 
-      if (perkStateLength < 3) {
+            if (perkStateLength < 3) {
 
-        costArray.push(perkArrayIndex.rating.cost);
-        let perkValueSum = costArray.reduce(getSum);
-        console.log('perkValueSum', perkValueSum);
+              costArray.push(perkArrayIndex.rating.cost);
+              this.setState({
+                perksPicked: [...perkStateArray, newPerk]
+              });
 
 
-        if (perkValueSum < 3) {
-          console.log('Sum Check',perkValueSum)
-          this.setState({
-            perksPicked: [...perkStateArray, newPerk]
-          });
-        }else if (perkValueSum > 3) {
-          console.log('cost is to DAMN HIGH');
-          return;
+          }else if (perkValueSum > 3) {
+            console.log('cost is to DAMN HIGH');
+            return;
+          }
+
         }
 
-      }
+    }
 
   }
+
+
+
 }
 
 heroSelect(hero,e) {
