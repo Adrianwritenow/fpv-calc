@@ -110,6 +110,8 @@ perkSelect(newPerk,e,value){
       // console.log('perkValueSum', perkValueSum);
       if (perkArrayIndex.name == newPerk.name) {
         console.log('duplicate');
+        perkStateArray.splice(i,1);
+        return;
 
       }
 
