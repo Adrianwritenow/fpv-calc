@@ -108,6 +108,10 @@ perkSelect(newPerk,e,value){
     for (var i = 0; i < perkStateLength; i++) {
       let perkArrayIndex = perkStateArray[`${i}`];
       // console.log('perkValueSum', perkValueSum);
+      if (perkArrayIndex.name == newPerk.name) {
+        console.log('duplicate');
+
+      }
 
       let perkValueSum = costArray.reduce(getSum);
 
