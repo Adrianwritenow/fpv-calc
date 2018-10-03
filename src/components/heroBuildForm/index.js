@@ -72,13 +72,16 @@ featSelect(newFeat,e){
   }
 }
 
+
+
+
 perkSelect(newPerk,e,value){
   e.preventDefault();
   newPerk.rating = value;
   console.log('newPerk:',newPerk);
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
-  const costArray = [];
+  const costArray = [0];
 
   function getSum(total, num) {
     return total + num;
@@ -92,6 +95,7 @@ perkSelect(newPerk,e,value){
     });
     ///need to push to perkcostarray
     costArray.push(value.cost);
+    console.log('costArray',costArray);
   }else {
 
     for (var i = 0; i < perkStateLength; i++) {
@@ -110,6 +114,8 @@ perkSelect(newPerk,e,value){
                 perksPicked: [...perkStateArray, newPerk]
               });
               costArray.push(value.cost);
+              console.log('Sum Check',perkValueSum)
+
 
 
           }else if (perkValueSum > 3) {
