@@ -91,6 +91,7 @@ perkSelect(newPerk,e,value){
       perksPicked: [...perkStateArray, newPerk]
     });
     ///need to push to perkcostarray
+    costArray.push(value.cost);
   }else {
 
     for (var i = 0; i < perkStateLength; i++) {
@@ -108,6 +109,7 @@ perkSelect(newPerk,e,value){
               this.setState({
                 perksPicked: [...perkStateArray, newPerk]
               });
+              costArray.push(value.cost);
 
 
           }else if (perkValueSum > 3) {
