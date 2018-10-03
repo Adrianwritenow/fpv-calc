@@ -81,12 +81,13 @@ perkSelect(newPerk,e,value){
   console.log('newPerk:',newPerk);
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
-  const costArray = [0];
+  let costArray = [0];
 
   function getSum(total, num) {
     return total + num;
 
 }
+
 
   if (perkStateLength < 1) {
     console.log('first block')
@@ -94,19 +95,23 @@ perkSelect(newPerk,e,value){
       perksPicked: [...perkStateArray, newPerk]
     });
     ///need to push to perkcostarray
+    let perkValueSum = costArray.reduce(getSum);
     costArray.push(value.cost);
     console.log('costArray',costArray);
+    console.log('perkValueSum',perkValueSum);
+
+    return costArray;
+
+
   }else {
 
     for (var i = 0; i < perkStateLength; i++) {
       let perkArrayIndex = perkStateArray[`${i}`];
-      let perkValueSum = costArray.reduce(getSum);
       // console.log('perkValueSum', perkValueSum);
 
+      let perkValueSum = costArray.reduce(getSum);
 
           if (perkValueSum < 3) {
-            console.log('Sum Check',perkValueSum)
-
             if (perkStateLength < 3) {
 
               costArray.push(perkArrayIndex.rating.cost);
@@ -114,15 +119,16 @@ perkSelect(newPerk,e,value){
                 perksPicked: [...perkStateArray, newPerk]
               });
               costArray.push(value.cost);
-              console.log('Sum Check',perkValueSum)
+              console.log('costArray',costArray);
+              console.log('Sum Check after add',perkValueSum)
 
 
-
-          }else if (perkValueSum > 3) {
-            console.log('cost is to DAMN HIGH');
-            return;
           }
 
+
+        }else if (perkValueSum > 3) {
+          console.log('cost is to DAMN HIGH');
+          return;
         }
 
     }
