@@ -83,8 +83,12 @@ perkSelect(newPerk,e,value){
   let perkStateLength = perkStateArray.length;
   let costArray = [0];
 
+
+
   function getSum(total, num) {
+    console.log('getSum cost:',total+num)
     return total + num;
+
 
 }
 
@@ -95,12 +99,11 @@ perkSelect(newPerk,e,value){
       perksPicked: [...perkStateArray, newPerk]
     });
     ///need to push to perkcostarray
-    let perkValueSum = costArray.reduce(getSum);
     costArray.push(value.cost);
-    console.log('costArray',costArray);
-    console.log('perkValueSum',perkValueSum);
 
-    return costArray;
+    console.log('costArray',costArray);
+
+    
 
 
   }else {
@@ -114,28 +117,44 @@ perkSelect(newPerk,e,value){
         return;
 
       }
-
       let perkValueSum = costArray.reduce(getSum);
 
-          if (perkValueSum < 3) {
+      let costCheck = perkValueSum + value.cost;
+      console.log('costCheck:', costCheck);
+      console.log('costArray b4 costchk',costArray);
+      console.log('perkValueSum b4 costchk:', perkValueSum);
+
+
+          if (costCheck < 3) {
+            console.log('less than 3');
+
             if (perkStateLength < 3) {
+              console.log('costArray b4 push',costArray);
 
               costArray.push(perkArrayIndex.rating.cost);
+              console.log('costArray aftr push',costArray);
+
+
               this.setState({
                 perksPicked: [...perkStateArray, newPerk]
               });
               costArray.push(value.cost);
               console.log('costArray',costArray);
-              console.log('Sum Check after add',perkValueSum)
-
-
+              return costArray;
           }
 
 
-        }else if (perkValueSum > 3) {
-          console.log('cost is to DAMN HIGH');
-          return;
         }
+
+    }
+    let perkValueSum = costArray.reduce(getSum);
+    console.log('perkValueSum cost high chk',perkValueSum);
+
+    if (perkValueSum+1 > 3) {
+      console.log('cost is to DAMN HIGH');
+      return;
+    }else if (perkStateLength+1 ==4) {
+      console.log('MAX PERK LIMIT');
 
     }
 

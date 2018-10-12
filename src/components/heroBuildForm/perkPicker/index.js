@@ -34,6 +34,10 @@ class PerkPicker extends Component {
 handlePerk(perk,e,value){
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
+
+  this.setState({
+
+  });
 }
 
 componentDidMount(){
