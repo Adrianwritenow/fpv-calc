@@ -27,6 +27,7 @@ class HeroBuildForm extends Component {
   this.featSelect = this.featSelect.bind(this);
   this.perkSelect = this.perkSelect.bind(this);
   this.repickHero = this.repickHero.bind(this);
+  this.duplicatePerkCheck = this.duplicatePerkCheck.bind(this);
 
 }
 
@@ -72,6 +73,32 @@ featSelect(newFeat,e){
   }
 }
 
+duplicatePerkCheck(perkStateArray, newPerk, costArray, value){
+
+  perkStateArray.map((perk,i)=>{
+    let perkArrayIndex = perkStateArray[`${i}`];
+
+    if (perk.name == newPerk.name) {  console.log('duplicate');
+      console.log('costArray b4 splice',costArray);
+      console.log('perkStateArray b4 splice',perkStateArray);
+      perkStateArray.splice(i,1);
+      return ;
+    }else {
+      costArray.push(perkArrayIndex.rating.cost);
+      console.log('costArray aftr splice',costArray);
+      console.log('perkStateArray aftr splice',perkStateArray);
+
+      this.setState({
+        perksPicked: [...perkStateArray, newPerk]
+      });
+      costArray.push(value.cost);
+      console.log('costArray',costArray);
+      return;
+    }
+
+  });
+}
+
 
 
 
@@ -81,65 +108,65 @@ perkSelect(newPerk,e,value){
   console.log('newPerk:',newPerk);
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
-  let costArray = [0];
+  let costArray = [];
+  let perkValueSum =0;
 
 
 
-  function getSum(total, num) {
-    console.log('getSum cost:',total+num)
-    return total + num;
 
+  const getSum = (total, num) =>total += num;
 
-}
+  if (perkStateLength == 0) {
 
-
-  if (perkStateLength < 1) {
     console.log('first block')
+    // this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value);
     this.setState({
       perksPicked: [...perkStateArray, newPerk]
     });
     ///need to push to perkcostarray
     costArray.push(value.cost);
+    let perkValueSum = costArray.reduce(getSum);
 
-    console.log('costArray',costArray);
+    return;
 
-    
-
-
-  }else {
+  }
+  else {
 
     for (var i = 0; i < perkStateLength; i++) {
-      let perkArrayIndex = perkStateArray[`${i}`];
+
       // console.log('perkValueSum', perkValueSum);
-      if (perkArrayIndex.name == newPerk.name) {
-        console.log('duplicate');
-        perkStateArray.splice(i,1);
-        return;
-
-      }
-      let perkValueSum = costArray.reduce(getSum);
-
-      let costCheck = perkValueSum + value.cost;
-      console.log('costCheck:', costCheck);
-      console.log('costArray b4 costchk',costArray);
-      console.log('perkValueSum b4 costchk:', perkValueSum);
+      // console.log('in If costArray',costArray);
 
 
-          if (costCheck < 3) {
-            console.log('less than 3');
+
+      // console.log('test Reduce',  costArray.reduce(getSum));
+
+      //
+      // let costCheck = perkValueSum + value.cost;
+      // console.log('costCheck:', costCheck);
+      // console.log('costArray b4 costchk',costArray);
+      // console.log('perkValueSum b4 costchk:', perkValueSum);
+
+
 
             if (perkStateLength < 3) {
-              console.log('costArray b4 push',costArray);
 
-              costArray.push(perkArrayIndex.rating.cost);
+              console.log('costArray b4 push',costArray);
+              if (perkValueSum < 3) {
+                console.log('less than 3');
+
+                this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value);
+
+
+              // costArray.push(perkArrayIndex.rating.cost);
               console.log('costArray aftr push',costArray);
 
 
-              this.setState({
-                perksPicked: [...perkStateArray, newPerk]
-              });
-              costArray.push(value.cost);
-              console.log('costArray',costArray);
+              // this.setState({
+              //   perksPicked: [...perkStateArray, newPerk]
+              // });
+              // costArray.push(value.cost);
+              // console.log('costArray',costArray);
               return costArray;
           }
 
@@ -147,8 +174,6 @@ perkSelect(newPerk,e,value){
         }
 
     }
-    let perkValueSum = costArray.reduce(getSum);
-    console.log('perkValueSum cost high chk',perkValueSum);
 
     if (perkValueSum+1 > 3) {
       console.log('cost is to DAMN HIGH');
