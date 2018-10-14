@@ -73,18 +73,19 @@ featSelect(newFeat,e){
   }
 }
 
-duplicatePerkCheck(perkStateArray, newPerk, costArray, value){
+duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
+
 
   perkStateArray.map((perk,i)=>{
-    let perkArrayIndex = perkStateArray[`${i}`];
 
     if (perk.name == newPerk.name) {  console.log('duplicate');
       console.log('costArray b4 splice',costArray);
       console.log('perkStateArray b4 splice',perkStateArray);
       perkStateArray.splice(i,1);
       return ;
-    }if(perk.name != newPerk.name){
-      costArray.push(perkArrayIndex.rating.cost);
+    }
+
+    if(perk.name != newPerk.name && perkStateLength+1 !=4){
       console.log('costArray aftr splice',costArray);
       console.log('perkStateArray aftr splice',perkStateArray);
 
@@ -94,7 +95,11 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value){
       costArray.push(value.cost);
       console.log('costArray',costArray);
       return;
+    }else{
+      perkStateArray.splice(2,1);
     }
+
+
 
 
   });
@@ -109,8 +114,8 @@ perkSelect(newPerk,e,value){
   console.log('newPerk:',newPerk);
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
-  let costArray = [];
-  let perkValueSum =0;
+  let costArray = [.1];
+  var perkValueSum =0.1;
 
 
 
@@ -126,7 +131,6 @@ perkSelect(newPerk,e,value){
     });
     ///need to push to perkcostarray
     costArray.push(value.cost);
-    let perkValueSum = costArray.reduce(getSum);
 
     return;
 
@@ -134,61 +138,47 @@ perkSelect(newPerk,e,value){
   else {
 
     for (var i = 0; i < perkStateLength; i++) {
-
-      // console.log('perkValueSum', perkValueSum);
-      // console.log('in If costArray',costArray);
-
-
-
-      // console.log('test Reduce',  costArray.reduce(getSum));
-
-      //
-      // let costCheck = perkValueSum + value.cost;
-      // console.log('costCheck:', costCheck);
-      // console.log('costArray b4 costchk',costArray);
-      // console.log('perkValueSum b4 costchk:', perkValueSum);
-
-
-
             if (perkStateLength < 3) {
 
               console.log('costArray b4 push',costArray);
               if (perkValueSum < 3) {
                 console.log('less than 3');
 
-                this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value);
+                this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
+                let perkValueSum = costArray.reduce(getSum);
 
 
               // costArray.push(perkArrayIndex.rating.cost);
               console.log('costArray aftr push',costArray);
+              console.log('perkValueSum aftr push',perkValueSum);
 
 
-              // this.setState({
-              //   perksPicked: [...perkStateArray, newPerk]
-              // });
-              // costArray.push(value.cost);
-              // console.log('costArray',costArray);
-              return costArray;
+              return;
+          }else if (perkValueSum+1 > 3) {
+            console.log('cost is to DAMN HIGH');
+
+            return ;
+
           }
+            return;
 
+        }else if(perkStateLength+1 ==4) {
+
+            console.log('MAX PERK LIMIT PlEASE UNSELECT A PERK!');
+            this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
+
+            return;
+
+          }
+          return;
 
         }
-
-    }
-
-    if (perkValueSum+1 > 3) {
-      console.log('cost is to DAMN HIGH');
-      return;
-    }else if (perkStateLength+1 ==4) {
-      console.log('MAX PERK LIMIT');
-
+        return;
     }
 
   }
 
 
-
-}
 
 heroSelect(hero,e) {
  e.preventDefault();
@@ -219,6 +209,7 @@ repickHero(){
     const nameField='nameField';
     const detailField='detailField';
     const heroPicked=this.state.hero;
+
 
     return (
       <div>
