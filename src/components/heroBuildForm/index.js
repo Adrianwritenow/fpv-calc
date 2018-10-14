@@ -83,7 +83,7 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value){
       console.log('perkStateArray b4 splice',perkStateArray);
       perkStateArray.splice(i,1);
       return ;
-    }else {
+    }if(perk.name != newPerk.name){
       costArray.push(perkArrayIndex.rating.cost);
       console.log('costArray aftr splice',costArray);
       console.log('perkStateArray aftr splice',perkStateArray);
@@ -95,6 +95,7 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value){
       console.log('costArray',costArray);
       return;
     }
+
 
   });
 }
