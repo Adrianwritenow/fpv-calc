@@ -74,35 +74,67 @@ featSelect(newFeat,e){
 }
 
 duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
+  let duplicate=false;
+//
+//   if(perkStateLength+1 ==4){
+//     perkStateArray.splice(2,1);
+//
+//   }else{
+    perkStateArray.forEach((perk,i)=>{
+      console.log('perk',perk);
+      let perkIndex= perkStateArray[`${i}`];
+
+      if (perkIndex.name == newPerk.name) {
+        // console.log('costArray b4 splice',costArray);
+        // console.log('perkStateArray b4 splice',perkStateArray);
+        perkStateArray.splice(i,1);
+        let duplicate = true;
+      }else {
+        console.log('bool',duplicate)
+      }
+
+    });
+
+//       for (var i = 0; i < perkStateLength; i++) {
+//           console.log('eachPerk');
+//
+
+//         }else {
+//           let duplicate=false;
+//           console.log(duplicate);
+//         }
+//         if(duplicate==false){
+//           console.log('duplicate check in add',duplicate);
+//
+//          console.log('costArray aftr splice',costArray);
+//          console.log('perkStateLength aftr splice',perkStateLength);
+//          console.log('not Duplicate and less than MAX');
+//
+         this.setState({
+           perksPicked: [...perkStateArray, newPerk]
+         });
+         costArray.push(value.cost);
+         console.log('costArray',costArray);
+         return;
+
+//
+//        }
+//
+//
+//       // if (perk.name == newPerk.name) {
+//       //   console.log('duplicate');
+//       //   console.log('costArray b4 splice',costArray);
+//       //   console.log('perkStateArray b4 splice',perkStateArray);
+//       //   perkStateArray.splice(i,1);
+//       //   return ;
+//       // }
+//     }
+//     });
+//
+//
+// }
 
 
-  perkStateArray.map((perk,i)=>{
-
-    if (perk.name == newPerk.name) {  console.log('duplicate');
-      console.log('costArray b4 splice',costArray);
-      console.log('perkStateArray b4 splice',perkStateArray);
-      perkStateArray.splice(i,1);
-      return ;
-    }
-
-    if(perk.name != newPerk.name && perkStateLength+1 !=4){
-      console.log('costArray aftr splice',costArray);
-      console.log('perkStateArray aftr splice',perkStateArray);
-
-      this.setState({
-        perksPicked: [...perkStateArray, newPerk]
-      });
-      costArray.push(value.cost);
-      console.log('costArray',costArray);
-      return;
-    }else{
-      perkStateArray.splice(2,1);
-    }
-
-
-
-
-  });
 }
 
 
