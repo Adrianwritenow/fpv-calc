@@ -76,63 +76,43 @@ featSelect(newFeat,e){
 duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
   let duplicate=false;
 //
-//   if(perkStateLength+1 ==4){
-//     perkStateArray.splice(2,1);
-//
-//   }else{
+  if(perkStateLength+1 ==4){
+    perkStateArray.splice(2,1);
+    return;
+
+  }else{
+
     perkStateArray.forEach((perk,i)=>{
-      console.log('perk',perk);
       let perkIndex= perkStateArray[`${i}`];
 
       if (perkIndex.name == newPerk.name) {
         // console.log('costArray b4 splice',costArray);
         // console.log('perkStateArray b4 splice',perkStateArray);
         perkStateArray.splice(i,1);
-        let duplicate = true;
-      }else {
-        console.log('bool',duplicate)
+         newPerk = false;
+
       }
 
+      if ( newPerk == false ) {
+        console.log('newperk is false');
+
+
+      }
+
+
     });
+  }
 
-//       for (var i = 0; i < perkStateLength; i++) {
-//           console.log('eachPerk');
-//
+    console.log('newPerk',newPerk);
+    if( newPerk !== false && perkStateArray.length < 3 ) {
 
-//         }else {
-//           let duplicate=false;
-//           console.log(duplicate);
-//         }
-//         if(duplicate==false){
-//           console.log('duplicate check in add',duplicate);
-//
-//          console.log('costArray aftr splice',costArray);
-//          console.log('perkStateLength aftr splice',perkStateLength);
-//          console.log('not Duplicate and less than MAX');
-//
-         this.setState({
-           perksPicked: [...perkStateArray, newPerk]
-         });
-         costArray.push(value.cost);
-         console.log('costArray',costArray);
-         return;
+     this.setState({
+       perksPicked: [...perkStateArray, newPerk]
+     });
+     costArray.push(value.cost);
+     console.log('costArray',costArray);
+   }
 
-//
-//        }
-//
-//
-//       // if (perk.name == newPerk.name) {
-//       //   console.log('duplicate');
-//       //   console.log('costArray b4 splice',costArray);
-//       //   console.log('perkStateArray b4 splice',perkStateArray);
-//       //   perkStateArray.splice(i,1);
-//       //   return ;
-//       // }
-//     }
-//     });
-//
-//
-// }
 
 
 }
@@ -143,7 +123,6 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
 perkSelect(newPerk,e,value){
   e.preventDefault();
   newPerk.rating = value;
-  console.log('newPerk:',newPerk);
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
   let costArray = [.1];
