@@ -79,27 +79,15 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
   if(perkStateLength+1 ==4){
     perkStateArray.splice(2,1);
     return;
-
   }else{
-
     perkStateArray.forEach((perk,i)=>{
       let perkIndex= perkStateArray[`${i}`];
 
       if (perkIndex.name == newPerk.name) {
-        // console.log('costArray b4 splice',costArray);
-        // console.log('perkStateArray b4 splice',perkStateArray);
+
         perkStateArray.splice(i,1);
          newPerk = false;
-
       }
-
-      if ( newPerk == false ) {
-        console.log('newperk is false');
-
-
-      }
-
-
     });
   }
 
@@ -109,8 +97,9 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
      this.setState({
        perksPicked: [...perkStateArray, newPerk]
      });
-     costArray.push(value.cost);
-     console.log('costArray',costArray);
+     // costArray.push(value.cost);
+     // console.log('costArray:::',costArray);
+     return costArray;
    }
 
 
@@ -125,69 +114,59 @@ perkSelect(newPerk,e,value){
   newPerk.rating = value;
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
-  let costArray = [.1];
-  var perkValueSum =0.1;
+  let perkValueSum =0.1;
+  let costArray = [.001]
+
+  function costCalc(){
+    const getSum = (total, num) =>total += num;
 
 
-
-
-  const getSum = (total, num) =>total += num;
-
-  if (perkStateLength == 0) {
-
-    console.log('first block')
-    // this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value);
-    this.setState({
-      perksPicked: [...perkStateArray, newPerk]
+    let costArray = [.001];
+    perkStateArray.forEach((perk)=>{
+      costArray.push(perk.rating.cost);
     });
-    ///need to push to perkcostarray
-    costArray.push(value.cost);
+    let perkValueSum = costArray.reduce(getSum);
 
-    return;
+    return perkValueSum;
+  }
+
+
+
+
+
+    if (perkStateLength == 0) {
+
+      console.log('first block')
+      this.setState({
+        perksPicked: [...perkStateArray, newPerk]
+      });
 
   }
-  else {
 
     for (var i = 0; i < perkStateLength; i++) {
             if (perkStateLength < 3) {
-
-              console.log('costArray b4 push',costArray);
               if (perkValueSum < 3) {
-                console.log('less than 3');
 
                 this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
-                let perkValueSum = costArray.reduce(getSum);
 
+                console.log('costCalc:',costCalc());
+                return;
+              }else if (perkValueSum+.8 > 3) {
+                console.log('cost is to DAMN HIGH');
+                return ;
+              }
+                return;
 
-              // costArray.push(perkArrayIndex.rating.cost);
-              console.log('costArray aftr push',costArray);
-              console.log('perkValueSum aftr push',perkValueSum);
+            }else if(perkStateLength+1 ==4) {
 
-
+              console.log('MAX PERK LIMIT PlEASE UNSELECT A PERK!');
+              this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
               return;
-          }else if (perkValueSum+1 > 3) {
-            console.log('cost is to DAMN HIGH');
-
-            return ;
-
-          }
-            return;
-
-        }else if(perkStateLength+1 ==4) {
-
-            console.log('MAX PERK LIMIT PlEASE UNSELECT A PERK!');
-            this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
-
-            return;
-
-          }
-          return;
-
-        }
-        return;
+            }
+              return;
     }
-
-  }
+      return;
+}
 
 
 
