@@ -178,6 +178,8 @@ class HeroBuildForm extends Component {
 
   }
 
+// On click it returns to repick hero and resets state
+
   repickHero() {
     this.setState({
       hero: null,

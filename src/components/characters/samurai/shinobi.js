@@ -11,7 +11,7 @@ export default{
           feats.level3.sharpenBlade,feats.level3.nukekubi,feats.level3.slipThrough,
           feats.level4.arrowStorm,feats.level4.nailBomb,feats.level4.yamaUba],
   perks:{
-    common:[perks.devourer,perks.remedy,perks.superSonic],
+    common:[perks.devourer,perks.remedy,perks.supersonic],
     rare:perks.endurance,
     heroic:perks.cleverTactics,
     epic:perks.headHunter,
