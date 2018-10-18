@@ -215,7 +215,7 @@ class HeroBuildForm extends Component {
         <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
         <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect}  featStateProp={this.state.featsPicked}/>
-        <PerkPicker heroProp={this.state.hero} onPerkSelect={this.perkSelect} featStateProp={this.state.perksPicked}/>
+        <PerkPicker heroProp={this.state.hero} onPerkSelect={this.perkSelect} perkStateProp={this.state.perksPicked}/>
         <button onClick={this.repickHero}>New Hero</button>
         </div>
 

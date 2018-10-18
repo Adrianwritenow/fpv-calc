@@ -18,13 +18,15 @@ class PerkPicker extends Component {
 
     perkValue:[''],
 
-    perk1:{
+    perkCommon:{
       index0:false,
       index1:false,
       index2:false
     },
-    perk2:false,
-    perk3:false
+    perkRare:false,
+    perkHeroic:false,
+    perkEpic:false,
+    perkLegendary:false
   };
   // This binding is necessary to make `this` work in the callback
   this.handlePerk = this.handlePerk.bind(this);
@@ -35,6 +37,7 @@ handlePerk(perk,e,value){
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
 
+  this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
   this.setState({
 
   });
@@ -82,7 +85,7 @@ componentDidMount(){
 
           perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare'><FeatTableCell heroItem={hero.perks.rare}/></td>);
           perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic'><FeatTableCell heroItem={hero.perks.heroic}/></td>)
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic'><FeatTableCell  heroItem={hero.perks.epic}/></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic'><FeatTableCell  heroItem={hero.perks.epic} /></td>)
           perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} key='legendary'><FeatTableCell heroItem={hero.perks.legendary}/></td>)
 
 
