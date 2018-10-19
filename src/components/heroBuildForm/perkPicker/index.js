@@ -36,11 +36,10 @@ class PerkPicker extends Component {
 handlePerk(perk,e,value){
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
+  console.log('  this.props.onPerkSelect(perk,e,value)',   this.props.onPerkSelect(perk,e,value))
 
-  this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
-  this.setState({
+  // this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
 
-  });
 }
 
 componentDidMount(){

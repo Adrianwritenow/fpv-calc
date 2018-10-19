@@ -112,10 +112,10 @@ class HeroBuildForm extends Component {
         perksPicked: [...perkStateArray, newPerk]
       });
 
-      return;
+      return perkStateArray;
     }
 
-
+    return perkStateArray;
 
   }
 
@@ -158,11 +158,11 @@ class HeroBuildForm extends Component {
     for (var i = 0; i < perkStateLength; i++) {
       if (perkStateLength <= 3) {
         this.perkFilter(perkStateArray, newPerk, value, perkStateLength, costCalc);
-        return;
+        return perkStateArray;
       }
-      return;
+      return perkStateArray;
     }
-    return;
+    return perkStateArray;
   }
 
 
