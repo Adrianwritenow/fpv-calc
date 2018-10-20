@@ -48,6 +48,7 @@ class HeroBuildForm extends Component {
 
     }
 
+
   }
 
 
@@ -112,10 +113,10 @@ class HeroBuildForm extends Component {
         perksPicked: [...perkStateArray, newPerk]
       });
 
-      return perkStateArray;
+      return ;
     }
 
-    return perkStateArray;
+    return ;
 
   }
 
@@ -160,9 +161,9 @@ class HeroBuildForm extends Component {
         this.perkFilter(perkStateArray, newPerk, value, perkStateLength, costCalc);
         return perkStateArray;
       }
-      return perkStateArray;
+      return ;
     }
-    return perkStateArray;
+    return ;
   }
 
 
@@ -206,6 +207,7 @@ class HeroBuildForm extends Component {
     const nameField='nameField';
     const detailField='detailField';
     const heroPicked=this.state.hero;
+    const heroPerkState = this.state.perksPicked;
 
 
     return (
@@ -215,7 +217,7 @@ class HeroBuildForm extends Component {
         <div className='buildCreateOverview'>
         <img src={this.state.hero.image} alt={this.state.hero.name}/>
         <FeatPicker heroProp={this.state.hero} onFeatSelect={this.featSelect}  featStateProp={this.state.featsPicked}/>
-        <PerkPicker heroProp={this.state.hero} onPerkSelect={this.perkSelect} perkStateProp={this.state.perksPicked}/>
+        <PerkPicker heroProp={this.state.hero} onPerkSelect={this.perkSelect} perkStateProp={heroPerkState}/>
         <button onClick={this.repickHero}>New Hero</button>
         </div>
 

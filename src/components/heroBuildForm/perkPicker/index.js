@@ -30,14 +30,26 @@ class PerkPicker extends Component {
   };
   // This binding is necessary to make `this` work in the callback
   this.handlePerk = this.handlePerk.bind(this);
+  this.handleChange = this.handleChange.bind(this);
+
 }
+
+
+
+handleChange(e) {
+  e.preventDefault();
+
+console.log('propinchange::',this.props.perkStateProp);
+
+}
+
+
 
 
 handlePerk(perk,e,value){
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
-  console.log('  this.props.onPerkSelect(perk,e,value)',   this.props.onPerkSelect(perk,e,value))
-
+  console.log('perkStateProp:::',this.props.perkStateProp);
   // this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
 
 }
@@ -117,6 +129,7 @@ componentDidMount(){
       <TableCell>LEGENDARY</TableCell>
       {perkArrayLegendary}
       </TableRow>
+      <input type="text" name="details" onChange={(e) => this.handleChange(e)} />
       </TableBody>
       </Table>
 
