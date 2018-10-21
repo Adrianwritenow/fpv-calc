@@ -163,7 +163,7 @@ class HeroBuildForm extends Component {
       }
       return ;
     }
-    return ;
+    return  ;
   }
 
 
@@ -208,6 +208,8 @@ class HeroBuildForm extends Component {
     const detailField='detailField';
     const heroPicked=this.state.hero;
     const heroPerkState = this.state.perksPicked;
+
+
 
 
     return (
