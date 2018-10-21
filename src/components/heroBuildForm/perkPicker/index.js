@@ -47,7 +47,7 @@ console.log('propinchange::',this.props.perkStateProp);
 
 
 handlePerk(perk,e,value){
-  // let perksPicked = this.props.perkStateProp;
+  let perksPicked = this.props.perkStateProp;
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
   // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
@@ -70,7 +70,7 @@ componentDidMount(){
     var perkArrayEpic=[];
     var perkArrayLegendary=[];
     const hero = this.state.hero;
-    // let perkStateProps = this.props.perkStateProp;
+    let perkStateProps = this.props.perkStateProp;
     var common = {
       rarity:'common',
       cost:.8
@@ -103,16 +103,16 @@ componentDidMount(){
           perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className='epic'><FeatTableCell  heroItem={hero.perks.epic} /></td>)
           perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} key='legendary' className='legendary'><FeatTableCell heroItem={hero.perks.legendary} /></td>)
 
-          // perkStateProps.map((perk)=>{
-          //   if (perk.rating.rarity) {
-          //     console.log('you have a',perk.rating.rarity);
-          //
-          //
-          //
-          //
-          //   }
-          //
-          // })
+          perkStateProps.map((perk)=>{
+            if (perk.rating.rarity) {
+              console.log('you have a',perk.rating.rarity);
+
+
+
+
+            }
+
+          })
 
 
     return (
