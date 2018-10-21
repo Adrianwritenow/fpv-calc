@@ -47,13 +47,13 @@ console.log('propinchange::',this.props.perkStateProp);
 
 
 handlePerk(perk,e,value){
-  let perksPicked = this.props.perkStateProp;
+  // let perksPicked = this.props.perkStateProp;
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
-  console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
+  // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
 
 
-  this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
+  // this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
 
 }
 
@@ -70,7 +70,7 @@ componentDidMount(){
     var perkArrayEpic=[];
     var perkArrayLegendary=[];
     const hero = this.state.hero;
-    let perkStateProps = this.props.perkStateProp;
+    // let perkStateProps = this.props.perkStateProp;
     var common = {
       rarity:'common',
       cost:.8
@@ -94,25 +94,25 @@ componentDidMount(){
 
 
           hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={perk.name}><FeatTableCell key={i} heroItem={perk}/></td>);
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={[`common${i}`]}><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare' className={hero.perks.rare.name}><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className={hero.perks.heroic.name}><FeatTableCell heroItem={hero.perks.heroic} /></td>)
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className={hero.perks.epic.name}><FeatTableCell  heroItem={hero.perks.epic} /></td>)
-          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} key='legendary' className={hero.perks.legendary}><FeatTableCell heroItem={hero.perks.legendary} /></td>)
+          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare' className='rare' ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className='heroic'><FeatTableCell heroItem={hero.perks.heroic} /></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className='epic'><FeatTableCell  heroItem={hero.perks.epic} /></td>)
+          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} key='legendary' className='legendary'><FeatTableCell heroItem={hero.perks.legendary} /></td>)
 
-          perkStateProps.map((perk)=>{
-            if (perk.name) {
-              // document.getElementsByClassName(`${perk.name}`).style.backgroundColor = 'yellow';
-
-
-
-
-            }
-
-          })
+          // perkStateProps.map((perk)=>{
+          //   if (perk.rating.rarity) {
+          //     console.log('you have a',perk.rating.rarity);
+          //
+          //
+          //
+          //
+          //   }
+          //
+          // })
 
 
     return (
