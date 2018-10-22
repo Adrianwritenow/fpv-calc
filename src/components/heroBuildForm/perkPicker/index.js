@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import FeatTableCell from '../../feats/featTableCell';
+
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -94,21 +96,19 @@ componentDidMount(){
 
 
           hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={[`common${i}`]}><FeatTableCell key={i} heroItem={perk}/></td>);
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} ref={[`common${i}`]}><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare' className='rare' ><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className='heroic'><FeatTableCell heroItem={hero.perks.heroic} /></td>)
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className='epic'><FeatTableCell  heroItem={hero.perks.epic} /></td>)
-          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} key='legendary' className='legendary'><FeatTableCell heroItem={hero.perks.legendary} /></td>)
+          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare' ref={'rare'} ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' ref={'heroic'}><FeatTableCell heroItem={hero.perks.heroic} /></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' ref={'epic'}><FeatTableCell  heroItem={hero.perks.epic} /></td>)
+          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} ref={'legendary' }><FeatTableCell heroItem={hero.perks.legendary} /></td>)
 
           perkStateProps.map((perk)=>{
             if (perk.rating.rarity) {
               console.log('you have a',perk.rating.rarity);
-
-
-
+              ReactDOM.findDOMNode(this.refs[`${perk.rating.rarity}`]).style.backgroundColor = 'yellow';
 
             }
 
