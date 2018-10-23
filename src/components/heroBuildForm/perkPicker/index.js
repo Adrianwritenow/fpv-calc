@@ -53,24 +53,22 @@ handlePerk(perk,e,value){
 
   perkStateProps.map((perk)=>{
 
-    if (perk.rating.rarity == 'common') {
-      this.state.hero.perks.common.map((heroPerk,i)=>{
-        if (heroPerk.name == perk.name) {
-          console.log('you got 1');
-          this.setState(prevState =>({
-            common:{
-                ...prevState.common,
-              [`${i}`]:!this.state.common[`${i}`]
-            }
-          }));
-        }
-        });
-      // console.log('you have a',perk.rating.rarity);
+    // if (perk.rating.rarity == 'common') {
+    //   this.state.hero.perks.common.map((heroPerk,i)=>{
+    //     // if (heroPerk.name == perk.name) {
+    //     //   this.setState(prevState =>({
+    //     //     common:{
+    //     //       [`${i}`]:!this.state.common[`${i}`]
+    //     //     }
+    //     //   }));
+    //   });
+    //     }
+
+        console.log('you have a',perk.rating.rarity);
 
 
-    }
 
-  })
+  });
   // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
 
 
@@ -82,6 +80,11 @@ componentDidMount(){
   console.log("COMPONENT MOUNTED:");
 
 }
+
+componentWillReceiveProps(nextProps) {
+    console.log('componentWillReceiveProps', nextProps.perkStateProp);
+  }
+
   render(){
 
 
