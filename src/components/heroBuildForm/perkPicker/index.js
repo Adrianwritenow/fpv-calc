@@ -17,18 +17,16 @@ class PerkPicker extends Component {
   super(props);
   this.state = {
     hero:this.props.heroProp,
-
     perkValue:[''],
-
-    perkCommon:{
-      index0:false,
-      index1:false,
-      index2:false
+    common:{
+      0:false,
+      1:false,
+      2:false
     },
-    perkRare:false,
-    perkHeroic:false,
-    perkEpic:false,
-    perkLegendary:false
+    rare:false,
+    heroic:false,
+    epic:false,
+    legendary:false
   };
   // This binding is necessary to make `this` work in the callback
   this.handlePerk = this.handlePerk.bind(this);
@@ -52,6 +50,30 @@ handlePerk(perk,e,value){
   let perksPicked = this.props.perkStateProp;
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
+
+  perksPicked.map((perk)=>{
+    if (perk.rating.rarity == 'common') {
+      this.state.hero.perks.common.map((heroPerk,i)=>{
+        if (heroPerk.name == perk.name) {
+          console.log('you got 1');
+          console.log('eval',heroPerk.name +'='+ perk.name);
+          this.setState({
+            common:{
+              [`${i}`]:!this.state.common[`${i}`]
+            }
+          })
+          return;
+        }else {
+          console.log('youdont');
+        }
+
+        });
+      // console.log('you have a',perk.rating.rarity);
+return;
+
+    }
+
+  })
   // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
 
 
@@ -96,23 +118,16 @@ componentDidMount(){
 
 
           hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} ref={[`common${i}`]}><FeatTableCell key={i} heroItem={perk}/></td>);
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={ this.state.common[`${i}`] ? `commonSelect${i}` : null }><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare' ref={'rare'} ><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' ref={'heroic'}><FeatTableCell heroItem={hero.perks.heroic} /></td>)
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' ref={'epic'}><FeatTableCell  heroItem={hero.perks.epic} /></td>)
-          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} ref={'legendary' }><FeatTableCell heroItem={hero.perks.legendary} /></td>)
+          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare'  ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' ><FeatTableCell heroItem={hero.perks.heroic} /></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' ><FeatTableCell  heroItem={hero.perks.epic} /></td>)
+          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} ><FeatTableCell heroItem={hero.perks.legendary} /></td>)
 
-          perkStateProps.map((perk)=>{
-            if (perk.rating.rarity) {
-              console.log('you have a',perk.rating.rarity);
-              ReactDOM.findDOMNode(this.refs[`${perk.rating.rarity}`]).style.backgroundColor = 'yellow';
 
-            }
-
-          })
 
 
     return (
