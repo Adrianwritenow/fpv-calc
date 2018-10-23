@@ -126,7 +126,7 @@ perkSelect(newPerk,e,value){
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
   let costArray = [.1];
-  var perkValueSum =0.1;
+  let perkValueSum =0.1;
 
 
 
@@ -143,20 +143,12 @@ perkSelect(newPerk,e,value){
     ///need to push to perkcostarray
     costArray.push(value.cost);
 
-    return;
-
   }
-  else {
 
     for (var i = 0; i < perkStateLength; i++) {
             if (perkStateLength < 3) {
-
-              console.log('costArray b4 push',costArray);
               if (perkValueSum < 3) {
-                console.log('less than 3');
-
                 this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
-                let perkValueSum = costArray.reduce(getSum);
 
 
               // costArray.push(perkArrayIndex.rating.cost);
@@ -165,7 +157,7 @@ perkSelect(newPerk,e,value){
 
 
               return;
-          }else if (perkValueSum+1 > 3) {
+          }else if (perkValueSum + value.cost > 3) {
             console.log('cost is to DAMN HIGH');
 
             return ;
@@ -185,7 +177,7 @@ perkSelect(newPerk,e,value){
 
         }
         return;
-    }
+
 
   }
 

@@ -47,29 +47,26 @@ console.log('propinchange::',this.props.perkStateProp);
 
 
 handlePerk(perk,e,value){
-  let perksPicked = this.props.perkStateProp;
+  let perkStateProps = this.props.perkStateProp;
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
 
-  perksPicked.map((perk)=>{
+  perkStateProps.map((perk)=>{
+
     if (perk.rating.rarity == 'common') {
       this.state.hero.perks.common.map((heroPerk,i)=>{
         if (heroPerk.name == perk.name) {
           console.log('you got 1');
-          console.log('eval',heroPerk.name +'='+ perk.name);
-          this.setState({
+          this.setState(prevState =>({
             common:{
+                ...prevState.common,
               [`${i}`]:!this.state.common[`${i}`]
             }
-          })
-          return;
-        }else {
-          console.log('youdont');
+          }));
         }
-
         });
       // console.log('you have a',perk.rating.rarity);
-return;
+
 
     }
 
