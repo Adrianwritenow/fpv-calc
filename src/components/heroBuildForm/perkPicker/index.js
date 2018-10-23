@@ -51,25 +51,7 @@ handlePerk(perk,e,value){
   e.preventDefault();
   this.props.onPerkSelect(perk,e,value);
 
-  perkStateProps.map((perk)=>{
-
-    // if (perk.rating.rarity == 'common') {
-    //   this.state.hero.perks.common.map((heroPerk,i)=>{
-    //     // if (heroPerk.name == perk.name) {
-    //     //   this.setState(prevState =>({
-    //     //     common:{
-    //     //       [`${i}`]:!this.state.common[`${i}`]
-    //     //     }
-    //     //   }));
-    //   });
-    //     }
-
-        console.log('you have a',perk.rating.rarity);
-
-
-
-  });
-  // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
+  console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
 
 
   // this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
@@ -83,7 +65,29 @@ componentDidMount(){
 
 componentWillReceiveProps(nextProps) {
     console.log('componentWillReceiveProps', nextProps.perkStateProp);
-  }
+
+    nextProps.perkStateProp.map((perk)=>{
+
+      if (perk.rating.rarity == 'common') {
+        this.state.hero.perks.common.map((heroPerk,i)=>{
+          if (heroPerk.name == perk.name) {
+            this.setState(prevState =>({
+              common:{
+                ...prevState.common,
+                [`${i}`]:!this.state.common[`${i}`]
+              }
+            }));
+        }
+      });
+
+          console.log('you have a',perk.rating.rarity);
+
+
+
+    }
+
+  });
+}
 
   render(){
 
