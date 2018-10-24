@@ -86,8 +86,6 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
       let perkIndex= perkStateArray[`${i}`];
 
       if (perkIndex.name == newPerk.name) {
-        // console.log('costArray b4 splice',costArray);
-        // console.log('perkStateArray b4 splice',perkStateArray);
         perkStateArray.splice(i,1);
          newPerk = false;
 
@@ -96,21 +94,18 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
       if ( newPerk == false ) {
         console.log('newperk is false');
 
-
       }
 
 
     });
   }
 
-    console.log('newPerk',newPerk);
     if( newPerk !== false && perkStateArray.length < 3 ) {
 
      this.setState({
        perksPicked: [...perkStateArray, newPerk]
      });
      costArray.push(value.cost);
-     console.log('costArray',costArray);
    }
 
 
@@ -135,7 +130,7 @@ perkSelect(newPerk,e,value){
 
   if (perkStateLength == 0) {
 
-    console.log('first block')
+    // console.log('first block')
     // this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value);
     this.setState({
       perksPicked: [...perkStateArray, newPerk]
@@ -152,8 +147,8 @@ perkSelect(newPerk,e,value){
 
 
               // costArray.push(perkArrayIndex.rating.cost);
-              console.log('costArray aftr push',costArray);
-              console.log('perkValueSum aftr push',perkValueSum);
+              // console.log('costArray aftr push',costArray);
+              // console.log('perkValueSum aftr push',perkValueSum);
 
 
               return;
@@ -187,7 +182,6 @@ heroSelect(hero,e) {
  e.preventDefault();
  console.log('The link was clicked.',hero);
  this.setState({hero:hero});
- console.log(this.state);
 
 
 }

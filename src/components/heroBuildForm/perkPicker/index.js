@@ -39,7 +39,7 @@ class PerkPicker extends Component {
 handleChange(e) {
   e.preventDefault();
 
-console.log('propinchange::',this.props.perkStateProp);
+console.log('state:::',this.state);
 
 }
 
@@ -49,9 +49,48 @@ console.log('propinchange::',this.props.perkStateProp);
 handlePerk(perk,e,value){
   let perkStateProps = this.props.perkStateProp;
   e.preventDefault();
-  this.props.onPerkSelect(perk,e,value);
+  console.log('<><>:',value)
 
-  console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
+    //
+    //
+    perkStateProps.forEach((statePerk,i)=>{
+      if (value.rarity == 'common'  ) {
+        console.log('statePerk',statePerk);
+      if (perk.name == statePerk.name) {
+        console.log('turnFalse:');
+        this.setState(prevState =>({
+          ...prevState.common,
+          common:{
+            [`${i}`]:false
+          }
+        }));
+
+      }else {
+        this.setState(prevState =>({
+          ...prevState.common,
+          common:{
+            [`${i}`]:true
+          }
+        }));
+
+      }
+      }
+    })
+
+
+  this.props.onPerkSelect(perk,e,value);
+  // this.setState(prevState =>({
+  //   ...prevState,
+  //   common:{
+  //     0:false,
+  //     1:false,
+  //     2:false
+  //   }
+  // }));
+  //
+
+
+  // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
 
 
   // this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
@@ -65,29 +104,50 @@ componentDidMount(){
 
 componentWillReceiveProps(nextProps) {
     console.log('componentWillReceiveProps', nextProps.perkStateProp);
+    console.log('orig props', this.props.perkStateProp);
 
-    nextProps.perkStateProp.map((perk)=>{
+    let perkStateProps = this.props.perkStateProp;
 
+
+
+
+    nextProps.perkStateProp.forEach((perk,i)=>{
+      let perkIndex = nextProps.perkStateProp[`${i}`];
+      console.log(perkIndex);
       if (perk.rating.rarity == 'common') {
         this.state.hero.perks.common.map((heroPerk,i)=>{
-          if (heroPerk.name == perk.name) {
-            this.setState(prevState =>({
+          let heroPerkIndex = this.state.hero.perks.common[`${i}`];
+          if (heroPerkIndex.name == perkIndex.name) {
+            this.setState(prevState=>({
               common:{
                 ...prevState.common,
-                [`${i}`]:!this.state.common[`${i}`]
+                [`${i}`]:true
               }
             }));
+
         }
+
+        // perkStateProps.map((perkProp,i)=>{
+        //   let perkStateIndex = perkStateProps[`${i}`];
+        //   if (perkStateIndex.name == heroPerkIndex.name) {
+        //     this.setState(prevState=>({
+        //       common:{
+        //         ...prevState.common,
+        //         [`${i}`]:false
+        //       }
+        //     }));
+        //
+        //   }
+        // });
+
       });
-
           console.log('you have a',perk.rating.rarity);
-
-
-
     }
 
   });
+// }
 }
+
 
   render(){
 
