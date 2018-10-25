@@ -74,7 +74,16 @@ handlePerk(perk,e,value){
         }));
 
       }
-      }
+    }else if (perk.name == statePerk.name) {
+
+      let perkRating =perk.rating.rarity;
+
+      this.setState({
+        [`${perkRating}`]:false
+      });
+
+
+    }
     })
 
 
@@ -126,20 +135,6 @@ componentWillReceiveProps(nextProps) {
             }));
 
         }
-
-        // perkStateProps.map((perkProp,i)=>{
-        //   let perkStateIndex = perkStateProps[`${i}`];
-        //   if (perkStateIndex.name == heroPerkIndex.name) {
-        //     this.setState(prevState=>({
-        //       common:{
-        //         ...prevState.common,
-        //         [`${i}`]:false
-        //       }
-        //     }));
-        //
-        //   }
-        // });
-
       });
           console.log('you have a',perk.rating.rarity);
     }else {
@@ -148,7 +143,6 @@ componentWillReceiveProps(nextProps) {
       this.setState({
         [`${perkRating}`]:true
       });
-      perk.rating.rarity
 
     }
 
