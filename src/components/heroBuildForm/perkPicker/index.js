@@ -59,7 +59,7 @@ handlePerk(perk,e,value){
       if (perk.name == statePerk.name) {
         console.log('turnFalse:');
         this.setState(prevState =>({
-          ...prevState.common,
+          ...prevState,
           common:{
             [`${i}`]:false
           }
@@ -67,14 +67,14 @@ handlePerk(perk,e,value){
 
       }else {
         this.setState(prevState =>({
-          ...prevState.common,
+          ...prevState,
           common:{
             [`${i}`]:true
           }
         }));
 
       }
-    }else if (perk.name == statePerk.name) {
+    }else if (perk.name == statePerk.name && perk.rating.rarity != 'common') {
 
       let perkRating =perk.rating.rarity;
 
