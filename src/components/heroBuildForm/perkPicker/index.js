@@ -69,12 +69,8 @@ handlePerk(perk,e,value){
 
     }else if (value.rarity != 'common') {
       let perkMap = this.state.hero.perks[`${value.rarity}`];
-      //
-      // console.log('perkMap',perkRating);
 
-//       perkMap.map((heroPerk,i)=>{
         console.log('itworks',perkMap.name);
-// })
         if (perkMap.name == perk.name) {
             this.setState({
               [`${value.rarity}`]:false
@@ -93,21 +89,6 @@ handlePerk(perk,e,value){
 
 
   this.props.onPerkSelect(perk,e,value);
-  // this.setState(prevState =>({
-  //   ...prevState,
-  //   common:{
-  //     0:false,
-  //     1:false,
-  //     2:false
-  //   }
-  // }));
-  //
-
-
-  // console.log('perkStateProp:::',this.props.onPerkSelect(perk,e,value));
-
-
-  // this.props.perkStateProp.map( perk => console.log('PERKSTATE MAP-PROP:',perk))
 
 }
 
@@ -124,7 +105,7 @@ componentWillReceiveProps(nextProps) {
 
     nextProps.perkStateProp.forEach((perk,i)=>{
       let perkIndex = nextProps.perkStateProp[`${i}`];
-      if (perk.rating.rarity == 'common') {
+      if (perk.rating.rarity == 'common' && perkStateProps.length < 3  ) {
         this.state.hero.perks.common.map((heroPerk,i)=>{
           let heroPerkIndex = this.state.hero.perks.common[`${i}`];
           if (heroPerkIndex.name == perkIndex.name) {
@@ -138,7 +119,7 @@ componentWillReceiveProps(nextProps) {
         }
       });
           console.log('you have a',perk.rating.rarity);
-    }else if (perk.rating.rarity != 'common') {
+    }else if (perk.rating.rarity != 'common' && perkStateProps.length < 3) {
       let perkRating =perk.rating.rarity;
 
       let perkMap = this.state.hero.perks[`${perkRating}`];

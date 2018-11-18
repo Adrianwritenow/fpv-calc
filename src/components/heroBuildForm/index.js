@@ -76,8 +76,19 @@ featSelect(newFeat,e){
 duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
   let duplicate=false;
 //
-  if(perkStateLength+1 ==4){
-    perkStateArray.splice(2,1);
+  if(perkStateLength+1 == 4){
+    // perkStateArray.splice(2,1);
+
+    perkStateArray.forEach((perk,i)=>{
+      let perkIndex= perkStateArray[`${i}`];
+
+      if (perkIndex.name == newPerk.name) {
+        perkStateArray.splice(i,1);
+         newPerk = false;
+
+      }
+
+    });
     return;
 
   }else{
