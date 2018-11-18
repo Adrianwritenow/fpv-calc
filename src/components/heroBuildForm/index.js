@@ -75,23 +75,7 @@ featSelect(newFeat,e){
 
 duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
   let duplicate=false;
-//
-  if(perkStateLength+1 == 4){
-    // perkStateArray.splice(2,1);
 
-    perkStateArray.forEach((perk,i)=>{
-      let perkIndex= perkStateArray[`${i}`];
-
-      if (perkIndex.name == newPerk.name) {
-        perkStateArray.splice(i,1);
-         newPerk = false;
-
-      }
-
-    });
-    return;
-
-  }else{
 
     perkStateArray.forEach((perk,i)=>{
       let perkIndex= perkStateArray[`${i}`];
@@ -109,14 +93,13 @@ duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength){
 
 
     });
-  }
+
 
     if( newPerk !== false && perkStateArray.length < 3 ) {
 
      this.setState({
        perksPicked: [...perkStateArray, newPerk]
      });
-     costArray.push(value.cost);
    }
 
 
@@ -132,7 +115,7 @@ perkSelect(newPerk,e,value){
   let perkStateArray = this.state.perksPicked;
   let perkStateLength = perkStateArray.length;
   let costArray = [.1];
-  let perkValueSum =0.1;
+  // let perkValueSum =0.1;
 
 
 
@@ -141,34 +124,33 @@ perkSelect(newPerk,e,value){
 
   if (perkStateLength == 0) {
 
-    // console.log('first block')
-    // this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value);
     this.setState({
       perksPicked: [...perkStateArray, newPerk]
     });
-    ///need to push to perkcostarray
-    costArray.push(value.cost);
-
   }
 
     for (var i = 0; i < perkStateLength; i++) {
+
+      perkStateArray.forEach(function(perk){
+        console.log('tik',perk.rating.cost);
+        costArray.push(perk.rating.cost);
+        // return costArray;
+
+      });
+
+      let perkValueSum = costArray.reduce(getSum);
+        console.log('chk',`${perkValueSum} + ${value.cost}`);
+      if (perkValueSum + value.cost > 3.3) {
+         console.log('cost is to DAMN HIGH');
+
+         return ;
             if (perkStateLength < 3) {
-              if (perkValueSum < 3) {
                 this.duplicatePerkCheck(perkStateArray, newPerk, costArray, value,perkStateLength);
 
 
-              // costArray.push(perkArrayIndex.rating.cost);
-              // console.log('costArray aftr push',costArray);
-              // console.log('perkValueSum aftr push',perkValueSum);
 
 
-              return;
-          }else if (perkValueSum + value.cost > 3) {
-            console.log('cost is to DAMN HIGH');
 
-            return ;
-
-          }
             return;
 
         }else if(perkStateLength+1 ==4) {
@@ -180,8 +162,8 @@ perkSelect(newPerk,e,value){
 
           }
           return;
-
         }
+      }
         return;
 
 
