@@ -19,9 +19,7 @@ class PerkPicker extends Component {
     hero:this.props.heroProp,
     perkValue:[''],
     common:{
-      0:false,
-      1:false,
-      2:false
+
     },
     rare:false,
     heroic:false,
@@ -50,20 +48,20 @@ handlePerk(perk,e,value){
   let perkStateProps = this.props.perkStateProp;
   e.preventDefault();
   console.log('<><>:',value)
+  console.log('orig props', perkStateProps);
 
 
-        perkStateProps.forEach((perkProp,i)=>{
+
+        perkStateProps.map((perkProp,i)=>{
           if (value.rarity == 'common') {
-
-            let heroPerkIndex = perkStateProps[`${i}`];
-            if (heroPerkIndex.name == perk.name) {
+            if (perkProp.name == perk.name) {
               this.setState(prevState=>({
                 common:{
                   ...prevState.common,
-                  [`${i}`]:false
+                  [perk.name]:false
                 }
               }));
-              console.log('madefalse');
+              console.log('madefalse',i);
           }
 
 
@@ -92,14 +90,25 @@ handlePerk(perk,e,value){
 
 }
 
-componentDidMount(){
-  console.log("COMPONENT MOUNTED:");
+componentWillMount(){
+  this.state.hero.perks.common.map((heroPerk,i)=>{
+    let heroPerkIndex = this.state.hero.perks.common[`${i}`];
+      this.setState(prevState=>({
+        common:{
+          ...prevState.common,
+          [heroPerk.name]:false
+        }
+      }));
+
+
+});
 
 }
 
+
+
 componentWillReceiveProps(nextProps) {
     console.log('componentWillReceiveProps', nextProps.perkStateProp);
-    console.log('orig props', this.props.perkStateProp);
 
     let perkStateProps = this.props.perkStateProp;
 
@@ -112,7 +121,7 @@ componentWillReceiveProps(nextProps) {
             this.setState(prevState=>({
               common:{
                 ...prevState.common,
-                [`${i}`]:true
+                [perk.name]:true
               }
             }));
 
@@ -167,7 +176,10 @@ componentWillReceiveProps(nextProps) {
 
 
           hero.perks.common.map((perk,i)=>{
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={ this.state.common[`${i}`] ? `commonSelect${i}` : false }><FeatTableCell key={i} heroItem={perk}/></td>);
+            let perkName =perk.name;
+            console.log('kik', this.state.common[perkName] );
+
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={ this.state.common[perkName] ? `commonSelect${i}` : false }><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
