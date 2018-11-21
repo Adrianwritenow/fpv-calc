@@ -219,7 +219,6 @@ componentWillReceiveProps(nextProps) {
       <TableCell>LEGENDARY</TableCell>
       {perkArrayLegendary}
       </TableRow>
-      <input type="text" name="details" onChange={(e) => this.handleChange(e)} />
       </TableBody>
       </Table>
 

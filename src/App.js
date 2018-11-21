@@ -5,6 +5,7 @@ import factionSelector from './components/factionSelector';
 import HeroSelector from './components/heroSelector';
 import HeroOverView from './components/heroOverview';
 import HeroBuildForm from './components/heroBuildForm';
+import Splash from './components/splash';
 
 
 import BaseLayout from './components/baseLayout'
@@ -20,7 +21,8 @@ class App extends Component {
            <TransitionGroup>
              <CSSTransition key={location.key} classNames='fade'timeout={400}>
                <Switch location={location}>
-                <Route exact path="/" component={factionSelector}/>
+                <Route exact path="/" component={Splash}/>
+                <Route exact path="/factionSelect" component={factionSelector}/>
                 <Route exact path='/buildForm' component={HeroBuildForm}/>
                 <Route exact path='/:faction' component={HeroSelector}/>
                 <Route exact path='/:faction/:hero' component={HeroOverView}/>

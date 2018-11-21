@@ -243,7 +243,7 @@ repickHero(){
         <HeroMultiCardOption onHeroSelect={this.heroSelect} />
       )}
         <input type="text" name="name" onChange={(e) => this.handleChange(nameField, e)} />
-        <input type="text" name="details" onChange={(e) => this.handleChange(detailField, e)} />
+        <textarea type="text" name="details" onChange={(e) => this.handleChange(detailField, e)} />
       </form>;
       </div>
 
