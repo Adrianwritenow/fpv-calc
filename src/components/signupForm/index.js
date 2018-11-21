@@ -8,39 +8,92 @@ class SignupForm extends Component {
 
 
       this.state = {
+        notSignUp:undefined,
         value: ''
       };
+
+      this.signUp = this.signUp.bind(this);
+
+    }
+
+    signUp(e) {
+      e.preventDefault();
+      let currentState = this.state.notSignUp;
+     this.setState({
+       notSignUp:!currentState
+
+     })
+
     }
 
 
   render() {
+    const notSignUp=this.state.notSignUp;
+
 
     return (
+
+
+      <div className='formWrapper'>
       <Form horizontal>
-    <FormGroup controlId="formHorizontalEmail">
-      <Col componentClass={ControlLabel} sm={2}>
-        Email
-      </Col>
-      <Col sm={10}>
-        <FormControl type="email" placeholder="Email" />
-      </Col>
-    </FormGroup>
+      {notSignUp ? (
+      <div className='signInWrapper'>
+        <FormGroup controlId="formHorizontalEmail">
+          <Col componentClass={ControlLabel} sm={2}>
+            Email
+          </Col>
+          <Col sm={10}>
+            <FormControl type="email" placeholder="Email" />
+          </Col>
+        </FormGroup>
 
-    <FormGroup controlId="formHorizontalPassword">
-      <Col componentClass={ControlLabel} sm={2}>
-        Password
-      </Col>
-      <Col sm={10}>
-        <FormControl type="password" placeholder="Password" />
-      </Col>
-    </FormGroup>
+        <FormGroup controlId="formHorizontalPassword">
+          <Col componentClass={ControlLabel} sm={2}>
+            Password
+          </Col>
+          <Col sm={10}>
+            <FormControl type="password" placeholder="Password" />
+          </Col>
+        </FormGroup>
 
-    <FormGroup>
-      <Col smOffset={2} sm={10}>
-        <Button type="submit">Sign in</Button>
-      </Col>
-    </FormGroup>
-  </Form>
+        <FormGroup>
+          <Col smOffset={2} sm={10}>
+            <Button type="submit">Sign in</Button>
+          </Col>
+        </FormGroup>
+        <Button  onClick={(e)=>this.signUp(e)}>I NEED A ACCOUNT</Button>
+        </div>
+    ):(
+      <div className='signUpWrapper'>
+        <FormGroup controlId="formHorizontalEmail">
+          <Col componentClass={ControlLabel} sm={2}>
+            Email
+          </Col>
+          <Col sm={10}>
+            <FormControl type="email" placeholder="Email" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup controlId="formHorizontalPassword">
+          <Col componentClass={ControlLabel} sm={2}>
+            Password
+          </Col>
+          <Col sm={10}>
+            <FormControl type="password" placeholder="Password" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col smOffset={2} sm={10}>
+            <Button type="submit">Sign UP</Button>
+          </Col>
+        </FormGroup>
+      <Button onClick={(e)=>this.signUp(e)} >I HAVE A ACCOUNT</Button>
+    </div>
+    )}
+    </Form>
+
+    </div>
 
     );
 
