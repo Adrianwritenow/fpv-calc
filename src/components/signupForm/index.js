@@ -1,49 +1,46 @@
 import React, { Component } from 'react';
 import '../../styles.css';
-import { FormGroup,ControlLabel,FormControl,HelpBlock } from 'react-bootstrap';
+import { FormGroup,ControlLabel,FormControl,Form, Col,Button } from 'react-bootstrap';
 
 class SignupForm extends Component {
   constructor(props, context) {
       super(props, context);
 
-      this.handleChange = this.handleChange.bind(this);
 
       this.state = {
         value: ''
       };
     }
 
-    getValidationState() {
-      const length = this.state.value.length;
-      if (length > 10) return 'success';
-      else if (length > 5) return 'warning';
-      else if (length > 0) return 'error';
-      return null;
-    }
-
-    handleChange(e) {
-      this.setState({ value: e.target.value });
-    }
 
   render() {
 
     return (
-      <form>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
-        >
-          <ControlLabel>Working example with validation</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.value}
-            placeholder="Enter text"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
-        </FormGroup>
-      </form>
+      <Form horizontal>
+    <FormGroup controlId="formHorizontalEmail">
+      <Col componentClass={ControlLabel} sm={2}>
+        Email
+      </Col>
+      <Col sm={10}>
+        <FormControl type="email" placeholder="Email" />
+      </Col>
+    </FormGroup>
+
+    <FormGroup controlId="formHorizontalPassword">
+      <Col componentClass={ControlLabel} sm={2}>
+        Password
+      </Col>
+      <Col sm={10}>
+        <FormControl type="password" placeholder="Password" />
+      </Col>
+    </FormGroup>
+
+    <FormGroup>
+      <Col smOffset={2} sm={10}>
+        <Button type="submit">Sign in</Button>
+      </Col>
+    </FormGroup>
+  </Form>
 
     );
 
