@@ -38,6 +38,8 @@ class SignupForm extends Component {
       <Form horizontal>
       {notSignUp ? (
       <div className='signInWrapper'>
+      <h1>SIGN UP</h1>
+
         <FormGroup controlId="formHorizontalEmail">
           <Col componentClass={ControlLabel} sm={2}>
             Email
@@ -58,13 +60,16 @@ class SignupForm extends Component {
 
         <FormGroup>
           <Col smOffset={2} sm={10}>
-            <Button type="submit">Sign in</Button>
+            <Button type="submit">REGISTER</Button>
           </Col>
         </FormGroup>
-        <Button  onClick={(e)=>this.signUp(e)}>I NEED A ACCOUNT</Button>
+        <Button  onClick={(e)=>this.signUp(e)}>I HAVE A ACCOUNT</Button>
         </div>
     ):(
+
       <div className='signUpWrapper'>
+      <h1>SIGN IN</h1>
+
         <FormGroup controlId="formHorizontalEmail">
           <Col componentClass={ControlLabel} sm={2}>
             Email
@@ -85,13 +90,14 @@ class SignupForm extends Component {
 
         <FormGroup>
           <Col smOffset={2} sm={10}>
-            <Button type="submit">Sign UP</Button>
+            <Button type="submit">SIGN IN</Button>
           </Col>
         </FormGroup>
-      <Button onClick={(e)=>this.signUp(e)} >I HAVE A ACCOUNT</Button>
+      <Button onClick={(e)=>this.signUp(e)} >I NEED A ACCOUNT</Button>
     </div>
     )}
     </Form>
+    <Button>I FORGOT DUUUUR</Button>
 
     </div>
 
