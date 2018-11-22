@@ -19,3 +19,42 @@ const setError = makeActionCreator(SET_ERROR);
 const setBuild = makeActionCreator(SET_BUILDS);
 const newHeroBuild = makeActionCreator(NEW_HERO_BUILD);
 const vsVote = makeActionCreator(VS_VOTE);
+
+
+
+export const loadTokenFromCookie = () => {
+    return (dispatch) => {
+        const token = Cookies.get('token');
+        if (token) {
+          console.log('im a token:',token)
+            dispatch(setToken(token));
+        }
+    }
+}
+
+
+export const login = (username, password, callback) => {
+    return (dispatch, getState) => {
+      console.log('bout to login');
+        request
+            .post("http://localhost:3001/")
+            .send({username: username, password: password})
+            .end((err,response) => {
+                if (err) {
+                    return dispatch(setError(err));
+                } else {
+                  dispatch(setError(null));
+                  console.log("res authtoken",response.body.auth_token);
+
+                  Cookies.set('token', response.body.auth_token, {expires:7});
+                  dispatch(setUser({email: response.body.email, 'username': response.body.username, id: response.body.id}))
+                  dispatch(loadTokenFromCookie());
+                  dispatch(getDashboard());
+                    console.log("bang")
+                }
+                if (callback) {
+                    callback();
+                }
+            })
+    }
+}
