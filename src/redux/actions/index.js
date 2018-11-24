@@ -1,4 +1,6 @@
 import request from "superagent";
+import Cookies from 'js-cookie';
+
 
 
 export const SET_ERROR = 'SET_ERROR';
@@ -27,11 +29,10 @@ export const loadTokenFromCookie = () => {
         const token = Cookies.get('token');
         if (token) {
           console.log('im a token:',token)
-            dispatch(setToken(token));
+            // dispatch(setToken(token));
         }
     }
 }
-
 
 export const login = (username, password, callback) => {
     return (dispatch, getState) => {
@@ -49,7 +50,7 @@ export const login = (username, password, callback) => {
                   Cookies.set('token', response.body.auth_token, {expires:7});
                   dispatch(setUser({email: response.body.email, 'username': response.body.username, id: response.body.id}))
                   dispatch(loadTokenFromCookie());
-                  dispatch(getDashboard());
+                  // dispatch(getDashboard());
                     console.log("bang")
                 }
                 if (callback) {
