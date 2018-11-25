@@ -1,4 +1,6 @@
 
+const passport = require('./authenticate');
+const app = express();
 
 
 app.post('/login', passport.authenticate('local'),function(request, response){
