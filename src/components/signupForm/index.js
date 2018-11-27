@@ -97,7 +97,7 @@ class SignupForm extends Component {
     </div>
     )}
     </Form>
-    <Button>I FORGOT DUUUUR</Button>
+    <Button href='/forgotEmail'>I FORGOT DUUUUR</Button>
 
     </div>
 
