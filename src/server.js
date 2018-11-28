@@ -49,3 +49,9 @@
  app.listen(port, function() {
   console.log(`api running on port ${port}`);
  });
+
+ //server.js
+// …(removed for brevity)
+var port = process.env.API_PORT || 3001;
+//db config
+mongoose.connect('mongodb://<Adrianwritenow>:<Amadeus90.>@ds123259.mlab.com:23259/forhonordb');
