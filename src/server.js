@@ -27,15 +27,56 @@ var Build = require('./model/build');
   next();
  });
  //now we can set the route path & initialize the API
- router.get(‘/’, function(req, res) {
-  res.json({ message: ‘API Initialized!’});
+ router.get('/', function(req, res) {
+  res.json({ message: 'API Initialized!'});
  });
  //Use our router configuration when we call /api
- app.use(‘/api’, router);
+ app.use('/api', router);
  //starts the server and listens for requests
  app.listen(port, function() {
   console.log(`api running on port ${port}`);
  });
+
+
+
+
+ //… removed for brevity
+//now we can set the route path & initialize the API
+router.get('/', function(req, res) {
+ res.json({ message: 'API Initialized!'});
+});
+//adding the /comments route to our /api router
+router.route(‘/comments’)
+ //retrieve all comments from the database
+ .get(function(req, res) {
+ //looks at our Comment Schema
+ Build.find(function(err, builds) {
+ if (err)
+ res.send(err);
+ //responds with a json object of our database comments.
+ res.json(builds)
+ });
+ })
+ //post new comment to the database
+ .post(function(req, res) {
+ var build = new Build();
+ //body parser lets us use the req.body
+ build.hero = req.body.hero;
+ build.feats = req.body.feats;
+ build.perks = req.body.perks;
+ build.title = req.body.title;
+ build.about = req.body.about;
+
+
+ build.text = req.body.text;
+comment.save(function(err) {
+ if (err)
+ res.send(err);
+ res.json({ message: 'Comment successfully added!' });
+ });
+ });
+//Use our router configuration when we call /api
+//...
 
  //server.js
 // …(removed for brevity)
