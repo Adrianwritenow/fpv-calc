@@ -1,6 +1,5 @@
 var Build = require('./model/build');
  //server.js
- ‘use strict’
  //first we import our dependencies…
  var express = require('express');
  var mongoose = require('mongoose');
@@ -45,20 +44,18 @@ var Build = require('./model/build');
 router.get('/', function(req, res) {
  res.json({ message: 'API Initialized!'});
 });
-//adding the /comments route to our /api router
-router.route(‘/comments’)
  //retrieve all comments from the database
- .get(function(req, res) {
- //looks at our Comment Schema
- Build.find(function(err, builds) {
- if (err)
- res.send(err);
- //responds with a json object of our database comments.
- res.json(builds)
- });
- })
+ // .get(function(req, res) {
+ // //looks at our Comment Schema
+ // Build.find(function(err, builds) {
+ // if (err)
+ // res.send(err);
+ // //responds with a json object of our database comments.
+ // res.json(builds)
+ // });
+ // })
  //post new comment to the database
- .post(function(req, res) {
+ app.post(function(req, res) {
  var build = new Build();
  //body parser lets us use the req.body
  build.hero = req.body.hero;
@@ -68,8 +65,7 @@ router.route(‘/comments’)
  build.about = req.body.about;
 
 
- build.text = req.body.text;
-comment.save(function(err) {
+build.save(function(err) {
  if (err)
  res.send(err);
  res.json({ message: 'Comment successfully added!' });
@@ -80,6 +76,5 @@ comment.save(function(err) {
 
  //server.js
 // …(removed for brevity)
-var port = process.env.API_PORT || 3001;
 //db config
 mongoose.connect('mongodb://<Adrianwritenow>:<Amadeus90.>@ds123259.mlab.com:23259/forhonordb');
