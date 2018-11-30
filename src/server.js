@@ -1,17 +1,4 @@
-//
-// var MongoClient = require('mongodb').MongoClient;
-// var url = "mongodb://localhost:27017/";
-//
-// MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
-//   if (err) throw err;
-//    var dbo = db.db("fhdb");
-//    dbo.createCollection("heroBuildCollection", function(err, res) {
-//      if (err) throw err;
-//      console.log("Collection created!");
-//      db.close();
-//    });
-//  });
-
+var Build = require('./model/build');
  //server.js
  ‘use strict’
  //first we import our dependencies…
