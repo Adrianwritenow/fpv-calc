@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 //object that shows the shape of your database entries.
 var UserSchema = new Schema({
  firstName: String,
- lastName: name:String,,
+ lastName: name:String,
  email:String,
  password:String,
  isDeleted:{

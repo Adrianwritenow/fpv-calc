@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles.css';
+import {connect} from 'react-redux';
+
 import { FormGroup,ControlLabel,FormControl,Form, Col,Button } from 'react-bootstrap';
 
 class SignupForm extends Component {
@@ -9,7 +11,11 @@ class SignupForm extends Component {
 
       this.state = {
         notSignUp:undefined,
-        value: ''
+        value: '',
+        userName:'',
+        password:'',
+        name:'',
+        email:''
       };
 
       this.signUp = this.signUp.bind(this);
@@ -35,17 +41,35 @@ class SignupForm extends Component {
 
 
       <div className='formWrapper'>
-      <Form horizontal>
       {notSignUp ? (
       <div className='signInWrapper'>
+      <Form horizontal  onSubmit={this.registerUser}>
       <h1>SIGN UP</h1>
 
-        <FormGroup controlId="formHorizontalEmail">
+        <FormGroup>
           <Col componentClass={ControlLabel} sm={2}>
             Email
           </Col>
           <Col sm={10}>
             <FormControl type="email" placeholder="Email" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup controlId="formHorizontalEmail">
+          <Col componentClass={ControlLabel} sm={2}>
+            Name
+          </Col>
+          <Col sm={10}>
+            <FormControl type="name" placeholder="Name" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={2}>
+            User Name
+          </Col>
+          <Col sm={10}>
+            <FormControl type="userName" placeholder="User Name" />
           </Col>
         </FormGroup>
 
@@ -64,10 +88,14 @@ class SignupForm extends Component {
           </Col>
         </FormGroup>
         <Button  onClick={(e)=>this.signUp(e)}>I HAVE A ACCOUNT</Button>
+        </Form>
+
         </div>
     ):(
 
       <div className='signUpWrapper'>
+      <Form horizontal>
+
       <h1>SIGN IN</h1>
 
         <FormGroup controlId="formHorizontalEmail">
@@ -94,9 +122,11 @@ class SignupForm extends Component {
           </Col>
         </FormGroup>
       <Button onClick={(e)=>this.signUp(e)} >I NEED A ACCOUNT</Button>
+      </Form>
+
     </div>
+
     )}
-    </Form>
     <Button href='/forgotEmail'>I FORGOT DUUUUR</Button>
 
     </div>
@@ -106,4 +136,5 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm;
+export defaultconnect(mapStateToProps,mapDispatchToProps)(SignupForm);
+;
