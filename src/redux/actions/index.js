@@ -1,5 +1,7 @@
 import request from "superagent";
 import Cookies from 'js-cookie';
+import request from "superagent";
+import Cookies from 'js-cookie';
 import { push } from 'react-router-redux';
 
 
@@ -65,13 +67,13 @@ export const register = ({
     email,
     password,
     username,
-    auth_token
+    name
 }, callback) => {
     return (dispatch, getState) => {
-      console.log("bout to send a post");
+      console.log("bout to Create a User");
         request
             .post("http://localhost:3001/register")
-            .send({email: email, password: password, username: username, auth_token:auth_token})
+            .send({email: email, password: password, username: username, name:name})
             .end((err, res) => {
                 if (err) {
                     return dispatch(setError(err));

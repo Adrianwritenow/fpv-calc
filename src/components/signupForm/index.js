@@ -22,6 +22,13 @@ class SignupForm extends Component {
 
     }
 
+    updateState = (field) => {
+      return (event) => {
+          this.setState({[field]: event.target.value})
+      }
+      console.log("this state:",this.state)
+  }
+
     signUp(e) {
       e.preventDefault();
       let currentState = this.state.notSignUp;
@@ -51,7 +58,7 @@ class SignupForm extends Component {
             Email
           </Col>
           <Col sm={10}>
-            <FormControl type="email" placeholder="Email" />
+            <FormControl value={this.state.email} onChange={this.updateState('level')} type="email" placeholder="Email" />
           </Col>
         </FormGroup>
 
@@ -60,7 +67,7 @@ class SignupForm extends Component {
             Name
           </Col>
           <Col sm={10}>
-            <FormControl type="name" placeholder="Name" />
+            <FormControl type="name" value={this.state.name} onChange={this.updateState('name')} placeholder="Name" />
           </Col>
         </FormGroup>
 
@@ -69,7 +76,7 @@ class SignupForm extends Component {
             User Name
           </Col>
           <Col sm={10}>
-            <FormControl type="userName" placeholder="User Name" />
+            <FormControl type="userName" value={this.state.userName} onChange={this.updateState('userName')} placeholder="User Name" />
           </Col>
         </FormGroup>
 
@@ -78,7 +85,7 @@ class SignupForm extends Component {
             Password
           </Col>
           <Col sm={10}>
-            <FormControl type="password" placeholder="Password" />
+            <FormControl type="password" value={this.state.password} onChange={this.updateState('password')} placeholder="Password" />
           </Col>
         </FormGroup>
 
@@ -136,5 +143,5 @@ class SignupForm extends Component {
   }
 }
 
-export defaultconnect(mapStateToProps,mapDispatchToProps)(SignupForm);
+export default connect(mapStateToProps,mapDispatchToProps)(SignupForm);
 ;
