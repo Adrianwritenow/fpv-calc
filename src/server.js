@@ -41,8 +41,15 @@ var Build = require('./model/build');
 
  //… removed for brevity
 //now we can set the route path & initialize the API
-router.get('/', function(req, res) {
- res.json({ message: 'API Initialized!'});
+router.get('/register', function(req, res) {
+
+  const {
+    username,
+    email,
+    password,
+    auth_token
+  } = request.body;
+
 });
  //retrieve all comments from the database
  // .get(function(req, res) {

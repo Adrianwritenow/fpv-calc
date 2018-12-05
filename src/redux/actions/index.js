@@ -41,7 +41,7 @@ export const login = (username, password, callback) => {
     return (dispatch, getState) => {
       console.log('bout to login');
         request
-            .post("http://localhost:3001/")
+            .post("http://localhost:3001/login")
             .send({username: username, password: password})
             .end((err,response) => {
                 if (err) {
