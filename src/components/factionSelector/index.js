@@ -12,7 +12,7 @@ class factionSelector extends Component {
 
   render() {
     return (
-      <div>
+      <div className='factionWrapper'>
       <FactionTile faction={factions.knights}/>
       <FactionTile faction={factions.samurai}/>
       <FactionTile faction={factions.vikings}/>
