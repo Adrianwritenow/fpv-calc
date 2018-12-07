@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles.css';
 import {connect} from 'react-redux';
+import register from '../redux/actions';
 
 import { FormGroup,ControlLabel,FormControl,Form, Col,Button } from 'react-bootstrap';
 
