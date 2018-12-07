@@ -174,19 +174,23 @@ componentWillReceiveProps(nextProps) {
       cost:1.5
     };
 
+    var perkStyle = {
+      borderRadius:'100%'
+    }
+
 
           hero.perks.common.map((perk,i)=>{
             let perkName =perk.name;
             console.log('kik', this.state.common[perkName] );
 
-            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={ this.state.common[perkName] ? `commonSelect${i}` : false }><FeatTableCell key={i} heroItem={perk}/></td>);
+            perkArrayCommon.push(<td onClick={(e)=>this.handlePerk(perk,e,common)} key={i} className={ this.state.common[perkName] ? `commonSelect${i}` : false } style={perkStyle}><FeatTableCell key={i} heroItem={perk}/></td>);
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare'  className={ this.state.rare ? `rare` : false }><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className={ this.state.heroic ? `heroic` : false }><FeatTableCell heroItem={hero.perks.heroic} /></td>)
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className={ this.state.epic ? `epic` : false }> <FeatTableCell  heroItem={hero.perks.epic} /></td>)
-          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} className={ this.state.legendary ? `legendary` : false }><FeatTableCell heroItem={hero.perks.legendary} /></td>)
+          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare'  className={ this.state.rare ? `rare` : false } style={perkStyle ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className={ this.state.heroic ? `heroic` : false } style={perkStyle><FeatTableCell heroItem={hero.perks.heroic} /></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className={ this.state.epic ? `epic` : false } style={perkStyle> <FeatTableCell  heroItem={hero.perks.epic} /></td>)
+          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} className={ this.state.legendary ? `legendary` : false } style={perkStyle><FeatTableCell heroItem={hero.perks.legendary} /></td>)
 
 
 
