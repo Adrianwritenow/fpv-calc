@@ -187,10 +187,10 @@ componentWillReceiveProps(nextProps) {
             return perkArrayCommon;
           })
 
-          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare'  className={ this.state.rare ? `rare` : false } style={perkStyle ><FeatTableCell heroItem={hero.perks.rare}/></td>);
-          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className={ this.state.heroic ? `heroic` : false } style={perkStyle><FeatTableCell heroItem={hero.perks.heroic} /></td>)
-          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className={ this.state.epic ? `epic` : false } style={perkStyle> <FeatTableCell  heroItem={hero.perks.epic} /></td>)
-          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} className={ this.state.legendary ? `legendary` : false } style={perkStyle><FeatTableCell heroItem={hero.perks.legendary} /></td>)
+          perkArrayRare.push(<td onClick={(e)=>this.handlePerk(hero.perks.rare,e,rare)} key='rare'  className={ this.state.rare ? `rare` : false } style={perkStyle} ><FeatTableCell heroItem={hero.perks.rare}/></td>);
+          perkArrayHeroic.push(<td onClick={(e)=>this.handlePerk(hero.perks.heroic,e,heroic)} key='heroic' className={ this.state.heroic ? `heroic` : false } style={perkStyle}><FeatTableCell heroItem={hero.perks.heroic} /></td>)
+          perkArrayEpic.push(<td onClick={(e)=>this.handlePerk(hero.perks.epic,e,epic)} key='epic' className={ this.state.epic ? `epic` : false } style={perkStyle}> <FeatTableCell  heroItem={hero.perks.epic} /></td>)
+          perkArrayLegendary.push(<td onClick={(e)=>this.handlePerk(hero.perks.legendary,e,legendary)} className={ this.state.legendary ? `legendary` : false } style={perkStyle}><FeatTableCell heroItem={hero.perks.legendary} /></td>)
 
 
 

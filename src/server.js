@@ -26,29 +26,22 @@ var Build = require('./model/build');
   next();
  });
  //now we can set the route path & initialize the API
- router.get('/', function(req, res) {
-  res.json({ message: 'API Initialized!'});
+ app.get('/', function(req, res) {
+  console.log('brrrap');
  });
  //Use our router configuration when we call /api
  app.use('/api', router);
  //starts the server and listens for requests
  app.listen(port, function() {
-  console.log(`api running on port ${port}`);
+  console.log(`api running on port ${port} PIZZZA COMBO!`);
  });
 
 
 
 
- //… removed for brevity
+ //… removed for brevitsy
 //now we can set the route path & initialize the API
 router.get('/register', function(req, res) {
-
-  const {
-    username,
-    email,
-    password,
-    auth_token
-  } = request.body;
 
 });
  //retrieve all comments from the database
@@ -79,7 +72,7 @@ build.save(function(err) {
  });
  });
 
- 
+
 //Use our router configuration when we call /api
 //...
 

@@ -1,7 +1,5 @@
 import request from "superagent";
 import Cookies from 'js-cookie';
-import request from "superagent";
-import Cookies from 'js-cookie';
 import { push } from 'react-router-redux';
 
 

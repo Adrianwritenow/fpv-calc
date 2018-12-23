@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles.css';
 import {connect} from 'react-redux';
-import register from '../redux/actions';
+import {register} from './../../redux/actions';
 
 import { FormGroup,ControlLabel,FormControl,Form, Col,Button } from 'react-bootstrap';
 
@@ -15,11 +15,15 @@ class SignupForm extends Component {
         value: '',
         userName:'',
         password:'',
-        name:'',
+        newPassword:'',
+        firstName:'',
+        lastName:'',
         email:''
       };
 
       this.signUp = this.signUp.bind(this);
+      this.registerUser = this.registerUser.bind(this);
+
 
     }
 
@@ -40,18 +44,34 @@ class SignupForm extends Component {
 
     }
 
+    registerUser(e){
+      e.preventDefault();
+
+      const register = this.props.register;
+
+      register(this.state, () => {
+           this.setState({
+               email: "",
+               username: "",
+               password: "",
+               auth_token:""
+
+           })
+
+         });
+
+
+    }
+
 
   render() {
     const notSignUp=this.state.notSignUp;
-
-
     return (
-
 
       <div className='formWrapper'>
       {notSignUp ? (
-      <div className='signInWrapper'>
-      <Form horizontal  onSubmit={this.registerUser}>
+      <div className='signUpWrapper'>
+      <Form horizontal>
       <h1>SIGN UP</h1>
 
         <FormGroup>
@@ -59,16 +79,25 @@ class SignupForm extends Component {
             Email
           </Col>
           <Col sm={10}>
-            <FormControl value={this.state.email} onChange={this.updateState('level')} type="email" placeholder="Email" />
+            <FormControl value={this.state.email} onChange={this.updateState('level')} type="newEmail" placeholder="Email" />
           </Col>
         </FormGroup>
 
         <FormGroup controlId="formHorizontalEmail">
           <Col componentClass={ControlLabel} sm={2}>
-            Name
+            First Name
           </Col>
           <Col sm={10}>
-            <FormControl type="name" value={this.state.name} onChange={this.updateState('name')} placeholder="Name" />
+            <FormControl type="name" value={this.state.firstName} onChange={this.updateState('firstName')} placeholder="Name" />
+          </Col>
+        </FormGroup>
+
+        <FormGroup controlId="formHorizontalEmail">
+          <Col componentClass={ControlLabel} sm={2}>
+            Last Name
+          </Col>
+          <Col sm={10}>
+            <FormControl type="name" value={this.state.lastName} onChange={this.updateState('lastName')} placeholder="Name" />
           </Col>
         </FormGroup>
 
@@ -86,13 +115,13 @@ class SignupForm extends Component {
             Password
           </Col>
           <Col sm={10}>
-            <FormControl type="password" value={this.state.password} onChange={this.updateState('password')} placeholder="Password" />
+            <FormControl type="password" value={this.state.password} onChange={this.updateState('newPassword')} placeholder="Password" />
           </Col>
         </FormGroup>
 
         <FormGroup>
           <Col smOffset={2} sm={10}>
-            <Button type="submit">REGISTER</Button>
+            <Button onClick={this.registerUser}>REGISTER</Button>
           </Col>
         </FormGroup>
         <Button  onClick={(e)=>this.signUp(e)}>I HAVE A ACCOUNT</Button>
@@ -101,7 +130,7 @@ class SignupForm extends Component {
         </div>
     ):(
 
-      <div className='signUpWrapper'>
+      <div className='signInWrapper'>
       <Form horizontal>
 
       <h1>SIGN IN</h1>
@@ -144,5 +173,15 @@ class SignupForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+    return {
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        registerUser: (registerInfo, callback) => dispatch(register(registerInfo, callback))
+    }
+}
+
 export default connect(mapStateToProps,mapDispatchToProps)(SignupForm);
-;
