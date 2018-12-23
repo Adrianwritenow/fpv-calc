@@ -86,7 +86,7 @@ export const register = ({
             })
 
             console.log('check:');
-            dispatch(push('/login'));
+            // dispatch(push('/'));
 
     }
 

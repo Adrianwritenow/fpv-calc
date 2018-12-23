@@ -180,7 +180,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        registerUser: (registerInfo, callback) => dispatch(register(registerInfo, callback))
+        register: (registerInfo, callback) => dispatch(register(registerInfo, callback))
     }
 }
 
